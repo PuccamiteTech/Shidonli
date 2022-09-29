@@ -19,7 +19,7 @@ copy htdocs.zip C:\Bitnami\wampstack-8.1.8-0\apache2\
 cls
 cd C:\Bitnami\wampstack-8.1.8-0\apache2\
 rd htdocs\img
-powershell Expand-Archive htdocs.zip
+powershell Expand-Archive htdocs.v2.zip
 del htdocs.zip
 echo All finished!
 pause
