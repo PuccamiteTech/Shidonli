@@ -1,0 +1,11 @@
+htdocs.v1.zip:
+Modified "index.html"
+
+htdocs.v2.zip:
+Added "v2\SL_Resources\audio\effects\camera.wma"
+Added "v2\ClientBin\Tv1Lib.xap"
+Added "clientaccesspolicy.xml"
+Added "crossdomain.xml"
+Added "v2\ClientBin\QuestGameLib.xap"
+Added "v2\ClientBin\RopesAndLaddersGameLib.xap"
+Added "v2\SL_Resources\audio\ladders.wma"

@@ -1,0 +1,96 @@
+<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	x:Class="RegisterLib.Stages"
+	d:DesignWidth="167" d:DesignHeight="37">
+	<UserControl.Resources>
+		<Storyboard x:Name="s_2">
+			<ColorAnimation Duration="0" To="#FFFA3582" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="path" d:IsOptimized="True"/>
+			<ColorAnimation Duration="0" To="#FFB81756" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="path1" d:IsOptimized="True"/>
+			<ColorAnimation Duration="0" To="#FFFFEB40" Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)" Storyboard.TargetName="textBlock" d:IsOptimized="True"/>
+			<ColorAnimation Duration="0" To="#FFFFC800" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="path2" d:IsOptimized="True"/>
+			<ColorAnimation Duration="0" To="#FFFFEB40" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="path3" d:IsOptimized="True"/>
+			<ColorAnimation Duration="0" To="#FFFF5000" Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)" Storyboard.TargetName="textBlock1" d:IsOptimized="True"/>
+		</Storyboard>
+		<Storyboard x:Name="s_3">
+			<ColorAnimation Duration="0" To="#FFFA3582" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="path4" d:IsOptimized="True"/>
+			<ColorAnimation Duration="0" To="#FFB81756" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="path5" d:IsOptimized="True"/>
+			<ColorAnimation Duration="0" To="#FFFFEB40" Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)" Storyboard.TargetName="textBlock2" d:IsOptimized="True"/>
+			<ColorAnimation Duration="0" To="#FFFFEB40" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="path3" d:IsOptimized="True"/>
+			<ColorAnimation Duration="0" To="#FFFFC800" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="path2" d:IsOptimized="True"/>
+			<ColorAnimation Duration="0" To="#FFFF5000" Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)" Storyboard.TargetName="textBlock1" d:IsOptimized="True"/>
+		</Storyboard>
+		<Storyboard x:Name="s_4">
+			<ColorAnimation Duration="0" To="#FFFA3582" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="path6" d:IsOptimized="True"/>
+			<ColorAnimation Duration="0" To="#FFB81756" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="path7" d:IsOptimized="True"/>
+			<ColorAnimation Duration="0" To="#FFFFEB40" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="path3" d:IsOptimized="True"/>
+			<ColorAnimation Duration="0" To="#FFFFC800" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="path2" d:IsOptimized="True"/>
+			<ColorAnimation Duration="0" To="#FFFFEB40" Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)" Storyboard.TargetName="textBlock3" d:IsOptimized="True"/>
+			<ColorAnimation Duration="0" To="#FFFF5000" Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)" Storyboard.TargetName="textBlock1" d:IsOptimized="True"/>
+		</Storyboard>
+	</UserControl.Resources>
+
+	<Grid x:Name="LayoutRoot">
+		<Canvas HorizontalAlignment="Left" Margin="0,-1,0,0" VerticalAlignment="Top" Width="165.9" Height="36.0">
+			<Viewbox Width="37.2" Height="36.0" Canvas.Left="42.3" Canvas.Top="0">
+				<Canvas Width="37.2" Height="36.0">
+					<Path x:Name="path1" Width="32.7" Height="32.0" Canvas.Left="4.2" Canvas.Top="3.1" Stretch="Fill" Fill="#FFFFC800" Data="F1 M 24.8,35.0C 24.8,35.0 11.1,36.0 7.7,30.9C 4.4,25.8 -6.1e-005,8.5 12.6,4.8C 25.2,1.1 36.3,2.7 36.9,15.8C 37.2,23.1 36.2,27.9 33.3,31.0C 30.4,34.0 25.6,34.9 24.8,35.0 Z "/>
+					<Path x:Name="path" Width="31.0" Height="29.4" Canvas.Left="3.7" Canvas.Top="2.1" Stretch="Fill" Fill="#FFFFEB40" Data="F1 M 23.2,31.4C 23.2,31.4 9.9,32.7 6.8,27.9C 3.6,23.2 0.2,6.7 11.9,3.3C 23.6,-0.0 34.0,3.5 34.6,11.2C 35.2,18.0 34.2,25.6 31.5,28.4C 28.8,31.3 24.1,31.3 23.2,31.4 Z "/>
+				</Canvas>
+			</Viewbox>
+			<Viewbox Width="37.2" Height="36.0" Canvas.Left="0" Canvas.Top="0">
+				<Canvas Width="37.2" Height="36.0">
+					<Viewbox Width="37.2" Height="36.0" Canvas.Left="0" Canvas.Top="0">
+						<Canvas Width="37.2" Height="36.0">
+							<Path x:Name="path2" Width="32.7" Height="32.0" Canvas.Left="4.2" Canvas.Top="3.1" Stretch="Fill" Fill="#FFB81756" Data="F1 M 24.8,35.0C 24.8,35.0 11.1,36.0 7.7,30.9C 4.4,25.8 0,8.5 12.6,4.8C 25.2,1.1 36.3,2.7 36.9,15.8C 37.2,23.1 36.2,27.9 33.3,31.0C 30.4,34.0 25.6,34.9 24.8,35.0 Z "/>
+							<Path x:Name="path3" Width="31.0" Height="29.4" Canvas.Left="3.7" Canvas.Top="2.1" Stretch="Fill" Fill="#FFFA3582" Data="F1 M 23.2,31.4C 23.2,31.4 9.9,32.7 6.8,27.9C 3.6,23.2 0.2,6.7 11.9,3.3C 23.6,-0.0 34.0,3.5 34.6,11.2C 35.2,18.0 34.2,25.6 31.5,28.4C 28.8,31.3 24.1,31.3 23.2,31.4 Z "/>
+						</Canvas>
+					</Viewbox>
+					<TextBlock x:Name="textBlock1" TextAlignment="Left" FontFamily="Comic Sans MS" FontSize="11.5" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="#FFFFEB40" Canvas.Left="1" Text="1"><TextBlock.RenderTransform>
+							<TransformGroup>
+								<MatrixTransform Matrix="1.3,0,0,1.3,15.6,5.5"/>
+							</TransformGroup>
+						</TextBlock.RenderTransform></TextBlock>
+				</Canvas>
+			</Viewbox>
+			<TextBlock x:Name="textBlock" TextAlignment="Left" FontFamily="Comic Sans MS" FontSize="11.5" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="#FFFF5000" Canvas.Left="-1" Text="2"><TextBlock.RenderTransform>
+					<TransformGroup>
+						<MatrixTransform Matrix="1.3,0,0,1.3,58.8,5.5"/>
+					</TransformGroup>
+				</TextBlock.RenderTransform></TextBlock>
+			<Viewbox Width="37.2" Height="36.0" Canvas.Left="85.6" Canvas.Top="0">
+				<Canvas Width="37.2" Height="36.0">
+					<Viewbox Width="37.2" Height="36.0" Canvas.Left="0" Canvas.Top="0">
+						<Canvas Width="37.2" Height="36.0">
+							<Path x:Name="path5" Width="32.7" Height="32.0" Canvas.Left="4.2" Canvas.Top="3.1" Stretch="Fill" Fill="#FFFFC800" Data="F1 M 24.8,35.0C 24.8,35.0 11.1,36.0 7.7,30.9C 4.4,25.8 0,8.5 12.6,4.8C 25.2,1.1 36.3,2.7 36.9,15.8C 37.2,23.1 36.2,27.9 33.3,31.0C 30.4,34.0 25.6,34.9 24.8,35.0 Z "/>
+							<Path x:Name="path4" Width="31.0" Height="29.4" Canvas.Left="3.7" Canvas.Top="2.1" Stretch="Fill" Fill="#FFFFEB40" Data="F1 M 23.2,31.4C 23.2,31.4 9.9,32.7 6.8,27.9C 3.6,23.2 0.2,6.7 11.9,3.3C 23.6,-0.0 34.0,3.5 34.6,11.2C 35.2,18.0 34.2,25.6 31.5,28.4C 28.8,31.3 24.1,31.3 23.2,31.4 Z "/>
+						</Canvas>
+					</Viewbox>
+					<TextBlock x:Name="textBlock2" TextAlignment="Left" FontFamily="Comic Sans MS" FontSize="11.5" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="#FFFF5000" Text="3"><TextBlock.RenderTransform>
+							<TransformGroup>
+								<MatrixTransform Matrix="1.3,0,0,1.3,14.9,5.5"/>
+							</TransformGroup>
+						</TextBlock.RenderTransform></TextBlock>
+				</Canvas>
+			</Viewbox>
+			<Viewbox Width="37.2" Height="36.0" Canvas.Left="128.6" Canvas.Top="0">
+				<Canvas Width="37.2" Height="36.0">
+					<Viewbox Width="37.2" Height="36.0" Canvas.Left="0" Canvas.Top="0">
+						<Canvas Width="37.2" Height="36.0">
+							<Path x:Name="path7" Width="32.7" Height="32.0" Canvas.Left="4.2" Canvas.Top="3.1" Stretch="Fill" Fill="#FFFFC800" Data="F1 M 24.8,35.0C 24.8,35.0 11.1,36.0 7.7,30.9C 4.4,25.8 0,8.5 12.6,4.8C 25.2,1.1 36.3,2.7 36.9,15.8C 37.2,23.1 36.2,27.9 33.3,31.0C 30.4,34.0 25.6,34.9 24.8,35.0 Z "/>
+							<Path x:Name="path6" Width="31.0" Height="29.4" Canvas.Left="3.7" Canvas.Top="2.1" Stretch="Fill" Fill="#FFFFEB40" Data="F1 M 23.2,31.4C 23.2,31.4 9.9,32.7 6.8,27.9C 3.6,23.2 0.2,6.7 11.9,3.3C 23.6,-0.0 34.0,3.5 34.6,11.2C 35.2,18.0 34.2,25.6 31.5,28.4C 28.8,31.3 24.1,31.3 23.2,31.4 Z "/>
+						</Canvas>
+					</Viewbox>
+					<TextBlock x:Name="textBlock3" TextAlignment="Left" FontFamily="Comic Sans MS" FontSize="11.5" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="#FFFF5000" Text="4"><TextBlock.RenderTransform>
+							<TransformGroup>
+								<MatrixTransform Matrix="1.3,0,0,1.3,14.9,5.5"/>
+							</TransformGroup>
+						</TextBlock.RenderTransform></TextBlock>
+				</Canvas>
+			</Viewbox>
+		</Canvas>
+	</Grid>
+</UserControl>

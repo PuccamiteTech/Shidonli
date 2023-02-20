@@ -1,0 +1,11 @@
+﻿<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" EntryPointAssembly="RegisterLib" EntryPointType="RegisterLib.App" RuntimeVersion="4.0.50401.0">
+  <Deployment.Parts>
+    <AssemblyPart x:Name="RegisterLib" Source="RegisterLib.dll" />
+    <AssemblyPart x:Name="AnimalsWorldClassLibrary1" Source="AnimalsWorldClassLibrary1.dll" />
+    <AssemblyPart x:Name="OnlineCommLib2" Source="OnlineCommLib2.dll" />
+    <AssemblyPart x:Name="NotificationsLib" Source="NotificationsLib.dll" />
+    <AssemblyPart x:Name="SkyMapClassLibrary" Source="SkyMapClassLibrary.dll" />
+    <AssemblyPart x:Name="ImageBrushesLib" Source="ImageBrushesLib.dll" />
+    <AssemblyPart x:Name="System.Xml.Linq" Source="System.Xml.Linq.dll" />
+  </Deployment.Parts>
+</Deployment>

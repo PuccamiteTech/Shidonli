@@ -1,0 +1,514 @@
+<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	x:Class="RegisterLib.PetTalk" Height="282" Width="382">
+	<UserControl.Resources>
+		<Storyboard x:Name="s_2">
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="canvas">
+				<DiscreteObjectKeyFrame KeyTime="0">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="canvas">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<BackEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="canvas">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0.68"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<BackEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="canvas">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0.68"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<BackEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="canvas">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<BackEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="canvas">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<BackEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="t18_EnterYour">
+				<DiscreteObjectKeyFrame KeyTime="0">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Collapsed</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.3">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Collapsed</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="t18_Email">
+				<DiscreteObjectKeyFrame KeyTime="0">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Collapsed</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.3">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Collapsed</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="t18_CheckYour">
+				<DiscreteObjectKeyFrame KeyTime="0">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Collapsed</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.3">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Collapsed</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="t18_Email1">
+				<DiscreteObjectKeyFrame KeyTime="0">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Collapsed</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.3">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Collapsed</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Name="s_3">
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="canvas">
+				<DiscreteObjectKeyFrame KeyTime="0">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="canvas">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<BackEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="canvas">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0.68"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<BackEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="canvas">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0.68"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<BackEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="canvas">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<BackEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="canvas">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<BackEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="t18_SignUP">
+				<DiscreteObjectKeyFrame KeyTime="0">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Collapsed</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="t18_WithMe">
+				<DiscreteObjectKeyFrame KeyTime="0">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Collapsed</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="t18_CheckYour">
+				<DiscreteObjectKeyFrame KeyTime="0">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Collapsed</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.3">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Collapsed</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="t18_Email1">
+				<DiscreteObjectKeyFrame KeyTime="0">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Collapsed</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.3">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Collapsed</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Name="s_4old">
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="canvas1">
+				<DiscreteObjectKeyFrame KeyTime="0">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Collapsed</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Name="s_4">
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="canvas">
+				<DiscreteObjectKeyFrame KeyTime="0">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="canvas">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<BackEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="canvas">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0.68"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<BackEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="canvas">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0.68"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<BackEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="canvas">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<BackEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="canvas">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<BackEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="t18_SignUP">
+				<DiscreteObjectKeyFrame KeyTime="0">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Collapsed</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="t18_WithMe">
+				<DiscreteObjectKeyFrame KeyTime="0">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Collapsed</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="t18_EnterYour">
+				<DiscreteObjectKeyFrame KeyTime="0">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Collapsed</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="t18_Email">
+				<DiscreteObjectKeyFrame KeyTime="0">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Collapsed</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="t18_CheckYour">
+				<DiscreteObjectKeyFrame KeyTime="0" Value="Check your"/>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="t18_Email1">
+				<DiscreteObjectKeyFrame KeyTime="0" Value="e-mail!"/>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimation Duration="0" To="22.69" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="t18_CheckYour" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0" To="29.63" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="t18_CheckYour" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0" To="24.69" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="t18_Email1" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0" To="29.63" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="t18_Email1" d:IsOptimized="True"/>
+		</Storyboard>
+	</UserControl.Resources>
+
+	<Canvas x:Name="LayoutRoot">
+		<Canvas x:Name="canvas" Canvas.Left="55" Canvas.Top="154" Width="182.9" Height="128.3" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+			<Canvas.RenderTransform>
+				<CompositeTransform/>
+			</Canvas.RenderTransform>
+			<Path Width="177.9" Height="123.1" Canvas.Left="4.5" Canvas.Top="5.3" Stretch="Fill" Fill="#FF21C1D5" Data="F1 M121.3,105.8 C119.7,105.2 42.4,106.8 22.0,105.2 C1.5,103.6 2.8,46.8 7.0,24.2 C10.5,4.9 31.3,5.8 41.5,5.6 C53.3,5.3 150.4,4.5 160.7,6.1 C170.9,7.7 181.1,17.7 182.0,35.2 C182.9,52.9 182.2,77.8 181.3,85.0 C179.3,101.0 167.4,105.1 154.0,106.6 C147.2,107.4 145.2,128.3 145.2,128.3 C145.2,128.3 135.0,108.2 121.3,105.8 z" UseLayoutRounding="False"/>
+			<Path Width="158.0" Height="100.5" Canvas.Left="17.9" Canvas.Top="16.2" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M122.1,99.1 C120.7,98.6 60.4,97.5 42.0,97.4 C14.4,97.4 16.0,49.1 20.2,30.6 C24.4,12.2 43.0,17.4 52.0,16.8 C61.0,16.1 147.7,15.9 156.7,17.2 C165.7,18.5 174.7,26.8 175.5,41.2 C176.3,55.7 175.7,76.1 174.9,82.0 C173.1,95.2 163.2,98.2 151.5,99.4 C145.5,100.1 143.8,116.8 143.8,116.8 C143.8,116.8 134.1,101.1 122.1,99.1 z" UseLayoutRounding="False"/>
+			<TextBlock x:Name="t18_SignUP" TextAlignment="Center" FontFamily="Comic Sans MS" FontSize="14.1" VerticalAlignment="Top" HorizontalAlignment="Left" Height="24" Text="Sign-up to play  " Foreground="#FFFF5000" Canvas.Left="12" Canvas.Top="-1" Width="107"><TextBlock.RenderTransform>
+					<CompositeTransform ScaleY="1.33" ScaleX="1.33" TranslateX="27.6" TranslateY="27.6"/>
+				</TextBlock.RenderTransform></TextBlock>
+			<TextBlock x:Name="t18_WithMe" TextAlignment="Center" FontFamily="Comic Sans MS" FontSize="14.1" VerticalAlignment="Top" HorizontalAlignment="Left" Height="24" Text="with me!" Foreground="#FFFF5000" Canvas.Top="27" Width="106" Canvas.Left="-2"><TextBlock.RenderTransform>
+					<CompositeTransform ScaleY="1.33" ScaleX="1.33" TranslateX="27.6" TranslateY="27.6"/>
+				</TextBlock.RenderTransform></TextBlock>
+			<TextBlock x:Name="t18_EnterYour" TextAlignment="Center" FontFamily="Comic Sans MS" FontSize="14.1" VerticalAlignment="Top" HorizontalAlignment="Left" Height="24" Text="Enter your" Foreground="#FFFF5000" Canvas.Left="29" Canvas.Top="-1"><TextBlock.RenderTransform>
+					<CompositeTransform ScaleY="1.33" ScaleX="1.33" TranslateX="27.6" TranslateY="27.6"/>
+				</TextBlock.RenderTransform></TextBlock>
+			<TextBlock x:Name="t18_Email" TextAlignment="Center" FontFamily="Comic Sans MS" FontSize="14.1" VerticalAlignment="Top" HorizontalAlignment="Left" Height="24" Text="Email address" Foreground="#FFFF5000" Canvas.Top="27" Width="106" Canvas.Left="-1"><TextBlock.RenderTransform>
+					<CompositeTransform ScaleY="1.33" ScaleX="1.33" TranslateX="27.6" TranslateY="27.6"/>
+				</TextBlock.RenderTransform></TextBlock>
+			<TextBlock x:Name="t18_CheckYour" TextAlignment="Center" FontFamily="Comic Sans MS" FontSize="14.1" VerticalAlignment="Top" HorizontalAlignment="Left" Height="24" Text="Enter your" Foreground="#FFFF5000" Canvas.Left="29" Canvas.Top="-1" Width="70.6"><TextBlock.RenderTransform>
+					<CompositeTransform ScaleY="1.33" ScaleX="1.33" TranslateX="27.6" TranslateY="27.6"/>
+				</TextBlock.RenderTransform></TextBlock>
+			<TextBlock x:Name="t18_Email1" TextAlignment="Center" FontFamily="Comic Sans MS" FontSize="14.1" VerticalAlignment="Top" HorizontalAlignment="Left" Height="24" Text="Email address" Foreground="#FFFF5000" Canvas.Top="27" Width="106" Canvas.Left="-1"><TextBlock.RenderTransform>
+					<CompositeTransform ScaleY="1.33" ScaleX="1.33" TranslateX="27.6" TranslateY="27.6"/>
+				</TextBlock.RenderTransform></TextBlock>
+		</Canvas>
+		<Canvas x:Name="canvas1" Height="281" Width="384" Visibility="Collapsed">
+			<Path Stretch="Fill" Fill="#FF21C1D5" Data="F1 M 549.4,3730.3C 547.0,3729.4 435.4,3729.2 406.5,3726.9C 395.5,3726.1 388.9,3714.0 385.2,3697.7C 381.7,3682.3 380.8,3557.0 381.5,3539.6C 382.0,3526.6 382.3,3520.2 384.1,3511.7C 389.9,3485.4 421.9,3483.4 436.4,3482.3C 450.9,3481.1 720.2,3480.7 734.7,3483.0C 749.1,3485.2 764.1,3497.6 764.1,3535.9C 764.1,3561 765.2,3690.6 763.9,3700.8C 761.7,3717.8 751.7,3725.3 738.9,3728.9C 734.6,3730.1 600.4,3730.9 595.7,3731.5C 586.1,3732.6 583.2,3762.1 583.2,3762.1C 583.2,3762.1 568.7,3733.7 549.4,3730.3 Z " Height="280.7" UseLayoutRounding="False" Width="383.2"/>
+			<Path Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 553.0,3717.1C 550.8,3716.2 447.5,3716.1 420.6,3714.0C 410.5,3713.2 404.4,3702.4 400.9,3687.7C 397.7,3673.8 396.9,3560.8 397.5,3545.1C 398.0,3533.4 398.2,3527.9 399.8,3520.2C 404.6,3496 435.0,3494.4 448.4,3493.4C 461.8,3492.4 711.1,3493.5 724.6,3494.0C 744.9,3494.8 751.4,3508.9 752.6,3531.3C 753.7,3553.9 752.9,3681.3 751.7,3690.5C 749.7,3705.8 740.4,3712.6 728.5,3715.8C 724.5,3716.9 600.3,3717.6 595.9,3718.1C 587.0,3719.1 581.1,3744.1 581.1,3744.1C 581.1,3744.1 570.9,3720.2 553.0,3717.1 Z " Height="251.0" Canvas.Left="16.0" Canvas.Top="11.6" UseLayoutRounding="False" Width="355.7"/>
+			<Viewbox Height="106.0" Canvas.Left="23" Canvas.Top="98" Width="118.7">
+				<Canvas Width="118.7" Height="106.0">
+					<Viewbox Width="116.1" Height="95.5" Canvas.Left="2.6" Canvas.Top="10.4">
+						<Canvas Width="116.1" Height="95.5">
+							<Path Width="89.4" Height="83.2" Canvas.Left="12.8" Canvas.Top="11.9" Stretch="Fill" Fill="#FFFA3582" Data="F1 M 26.3,12.8C 19.4,14.0 14.2,24.1 13.3,39.0C 12.4,53.8 12.8,64.2 14.1,73.3C 15.3,81.3 19.1,93.8 35.9,94.6C 52.6,95.5 79.6,95.5 87.5,93.8C 95.5,92.0 100.6,79.7 101.4,67.6C 102.3,54.5 102.5,51.6 102.1,41.4C 101.7,31.3 101.6,15.0 90.1,13.3C 80.0,11.7 33.4,11.5 26.3,12.8 Z "/>
+							<Viewbox Width="116.1" Height="94.7" Canvas.Left="0" Canvas.Top="0">
+								<Canvas Width="116.1" Height="94.7">
+									<Path Width="63.2" Height="42.3" Canvas.Left="26.1" Canvas.Top="50.5" Stretch="Fill" StrokeThickness="0.3" StrokeLineJoin="Round" Stroke="#FF000000" Fill="#FF1E54AA" Data="F1 M 26.5,53.7C 26.5,53.7 25.5,63.8 27.5,66.6C 29.6,69.5 37.9,69.8 39.0,73.0C 40.1,76.3 42.7,77.7 45.9,81.4C 49.0,85.1 50.3,87.5 53.9,89.0C 57.4,90.5 60.7,94.5 63.1,91.7C 65.5,88.9 66.8,83.0 68.2,81.4C 69.7,79.8 71.4,76.0 74.7,73.5C 78.0,71.0 77.9,66.2 80.0,66.6C 82.2,67.1 82.1,74.1 84.7,71.1C 87.3,68.1 86.2,67.7 87.5,62.6C 88.8,57.5 89.5,52.3 89.0,51.0C 88.4,49.6 37.2,52.8 34.0,52.6C 30.7,52.5 26.6,53.5 26.5,53.7 Z "/>
+									<Path Width="63.5" Height="20.1" Canvas.Left="25.9" Canvas.Top="43.7" Stretch="Fill" Fill="#FF1184BD" Data="F1 M 27.4,50.7C 26.8,51.1 24.2,54.9 27.7,56.2C 31.2,57.4 36.8,57.4 43.0,59.3C 49.2,61.2 50.0,64.7 59.7,63.7C 69.5,62.6 75.7,59.6 81.8,55.6C 87.9,51.6 88.3,52.9 89.3,50.4C 90.3,47.8 86.7,47.4 83.8,47.6C 80.9,47.7 78.9,47.8 72.5,47.0C 66.0,46.2 60.2,45.1 54.0,43.9C 47.8,42.7 43.1,47.0 39.8,46.6C 36.5,46.2 28.5,49.7 27.4,50.7 Z "/>
+									<Path Width="12.7" Height="25.0" Canvas.Left="67.0" Canvas.Top="58.9" Stretch="Fill" Fill="#FF15438D" Data="F1 M 79.6,58.9C 79.6,58.9 79.0,61.5 77.6,63.7C 76.2,65.9 73.2,68.7 71.6,70.6C 70.0,72.4 67.4,79.0 67.4,79.0L 67.0,84.0C 67.0,84.0 71.4,76.4 73.0,75.2C 74.6,74.0 77.4,70.0 78.6,67.1C 79.8,64.3 79.8,59.5 79.6,58.9 Z "/>
+									<Path Width="7.0" Height="8.0" Canvas.Left="31.8" Canvas.Top="64.5" Stretch="Fill" Fill="#FF15438D" Data="F1 M 31.8,68.5C 31.8,68.5 32.8,65.7 34.6,64.7C 36.4,63.7 36.6,66.3 37.6,67.7C 38.6,69.1 38.8,71.1 38.8,72.3C 38.8,73.5 35.4,69.3 33.8,69.3C 32.2,69.3 32.2,68.5 31.8,68.5 Z "/>
+									<Path Width="5.8" Height="18.8" Canvas.Left="44.5" Canvas.Top="67.0" Stretch="Fill" Fill="#FF15438D" Data="F1 M 44.5,79.6C 44.5,79.6 45.3,77.1 46.5,72.3C 47.7,67.4 47.1,66.4 47.7,67.2C 48.3,68.0 49.7,72.3 49.1,74.9C 48.5,77.5 49.7,80.2 49.9,81.6C 50.1,83.0 50.3,85.8 50.3,85.8L 44.5,79.6 Z "/>
+									<Path Width="49.0" Height="11.3" Canvas.Left="35.0" Canvas.Top="47.3" Stretch="Fill" Fill="#802C2C2C" Data="F1 M 35.2,49.7C 36.0,48.2 29.1,58.6 58.5,58.7C 80.5,58.7 83.8,52.3 84.0,51.0C 84.8,46.3 63.9,47.8 57.4,47.4C 50.9,46.9 35.2,49.7 35.2,49.7 Z "/>
+									<Viewbox Width="116.1" Height="83.2" Canvas.Left="0" Canvas.Top="0">
+										<Canvas Width="116.1" Height="83.2">
+											<Path Width="47.9" Height="39.4" Canvas.Left="34.5" Canvas.Top="17.5" Stretch="Fill" Fill="#FFE7E7E7" Data="F1 M 34.5,50.2C 34.8,50.1 33.5,20.2 54.7,17.9C 84.0,13.7 82.5,50.2 82.5,50.2C 82.5,50.2 79.5,56.0 59.4,56.9C 39.2,57.7 34.8,51.2 34.5,50.2 Z "/>
+											<Canvas Width="800" Height="600" Clip="F1 M 34.5,50.2C 34.8,50.1 33.5,20.2 54.7,17.9C 84.0,13.7 82.5,50.2 82.5,50.2C 82.5,50.2 79.5,56.0 59.4,56.9C 39.2,57.7 34.8,51.2 34.5,50.2 Z ">
+												<Image Source="image04.png" Width="1280" Height="1024" Canvas.Left="0" Canvas.Top="0">
+													<Image.RenderTransform>
+														<TransformGroup>
+															<MatrixTransform Matrix="0.0,0,0,0.0,1.0e-005,3.5e-005"/>
+														</TransformGroup>
+													</Image.RenderTransform>
+												</Image>
+											</Canvas>
+										</Canvas>
+									</Viewbox>
+									<Path Width="21.6" Height="25.8" Canvas.Left="36.7" Canvas.Top="19.5" Stretch="Fill" Fill="#9AFFFFFF" Data="F1 M 36.7,42.7C 36.8,42.5 38.4,29.2 44.5,24.3C 50.5,19.4 56.9,19.5 56.9,19.5C 56.9,19.5 59.7,19.8 57.6,20.7C 55.5,21.6 49.9,22.8 46.1,29.3C 42.3,35.9 41.5,39.9 40.5,43.2C 39.5,46.4 36.7,46.1 36.7,42.7 Z "/>
+								</Canvas>
+							</Viewbox>
+						</Canvas>
+					</Viewbox>
+					<Viewbox Width="56.1" Height="42.5" Canvas.Left="0" Canvas.Top="0">
+						<Canvas Width="56.1" Height="42.5">
+							<Path Width="67.3" Height="52.3" Canvas.Left="-5.8" Canvas.Top="-8.0" Stretch="Fill" Fill="#FFFFA500" Data="F1 M 7.5,25.3C 7.5,25.3 1.4,13.8 10.3,8.7C 17.1,4.8 18.3,9.4 18.3,9.4C 18.3,9.4 19.5,0 29.2,0.1C 36.1,0.3 38.4,8.4 38.4,8.4C 38.4,8.4 45.1,1.3 49.6,6.0C 54.1,10.7 49.3,13.6 49.3,13.6C 49.3,13.6 56.1,17.7 54.3,22.8C 52.5,28.0 44.6,26.1 44.6,26.1C 44.6,26.1 46.6,31.9 39.8,33.8C 33.0,35.7 32.8,30.2 32.8,30.2C 32.8,30.2 35.4,34.6 28.8,38.2C 22.2,41.9 20.4,34.1 20.4,34.1C 20.4,34.1 22.4,41.2 15.6,41.8C 8.8,42.5 8.7,34.5 8.7,34.5C 8.7,34.5 1.6,38.4 0.8,31.4C 0,24.4 8.2,24.3 7.5,25.3 Z " UseLayoutRounding="False"/>
+							<Path Width="58.3" Height="44.0" Canvas.Left="-1.4" Canvas.Top="-2.2" Stretch="Fill" Fill="White" Data="F1 M 10.8,26.2C 10.8,26.2 5.9,16.9 13.4,12.6C 19.1,9.4 20.1,13.2 20.1,13.2C 20.1,13.2 21.2,5.4 29.3,5.5C 35.0,5.5 36.8,12.1 36.8,12.1C 36.8,12.1 42.5,6.2 46.2,10.0C 49.9,13.8 45.9,16.2 45.9,16.2C 45.9,16.2 51.5,19.5 50.0,23.7C 48.4,27.9 41.8,26.5 41.8,26.5C 41.8,26.5 43.4,31.2 37.7,32.8C 32.0,34.4 31.9,30.0 31.9,30.0C 31.9,30.0 34.1,33.5 28.5,36.5C 22.9,39.6 21.5,33.2 21.5,33.2C 21.5,33.2 23.1,39.0 17.5,39.6C 11.8,40.2 11.8,33.7 11.8,33.7C 11.8,33.7 5.8,37.0 5.2,31.3C 4.6,25.6 11.5,25.4 10.8,26.2 Z " UseLayoutRounding="False"/>
+							<TextBlock x:Name="t18_Free_Copy1" TextAlignment="Center" FontFamily="Comic Sans MS" FontSize="12" VerticalAlignment="Top" HorizontalAlignment="Left" Height="20.5" Text="free!" Foreground="#FFFF5000" Width="36.9" Canvas.Left="-26.0" Canvas.Top="-9.5" UseLayoutRounding="False" d:LayoutRounding="Auto"><TextBlock.RenderTransform>
+									<CompositeTransform ScaleY="1.33" ScaleX="1.33" TranslateX="27.6" TranslateY="27.6" Rotation="-22.8"/>
+								</TextBlock.RenderTransform></TextBlock>
+						</Canvas>
+					</Viewbox>
+				</Canvas>
+			</Viewbox>
+			<Viewbox Height="106.0" Canvas.Left="138" Canvas.Top="98" Width="105.4">
+				<Canvas Width="105.4" Height="106.0">
+					<Path Width="89.4" Height="83.2" Canvas.Left="15.7" Canvas.Top="22.4" Stretch="Fill" Fill="#FFF9E241" Data="F1 M 29.2,23.3C 22.3,24.5 17.1,34.6 16.2,49.5C 15.3,64.3 15.7,74.6 17.0,83.7C 18.2,91.8 22.0,104.3 38.7,105.1C 55.5,106.0 82.4,106.0 90.4,104.3C 98.3,102.5 103.5,90.2 104.3,78.1C 105.2,65.0 105.4,62.1 105.0,51.9C 104.5,41.7 104.5,25.5 93.0,23.8C 82.9,22.2 36.3,21.9 29.2,23.3 Z "/>
+					<Viewbox Width="47.7" Height="68.6" Canvas.Left="34.7" Canvas.Top="28.9">
+						<Canvas Width="47.7" Height="68.6">
+							<Path Width="42.6" Height="38.1" Canvas.Left="4.4" Canvas.Top="1.8" Stretch="Fill" Fill="#FFFDB6CD" Data="F1 M 7.2,39.9C 7.2,39.9 0.0,34.3 8.6,29.1C 5.8,23.5 6.9,21.6 11.1,19.4C 10.1,15.4 9.1,13.5 14.3,11.5C 19.5,9.4 25.4,8.3 23.6,5.2C 21.9,2.2 18.5,4.2 18.5,4.2C 18.5,4.2 23.5,0 27.5,2.7C 31.6,5.4 28.6,10.9 28.6,10.9C 28.6,10.9 34.0,8.8 35.3,12.4C 36.6,16.0 32.9,16.5 32.9,16.5C 32.9,16.5 38.4,14.8 40.5,18.1C 42.6,21.3 40.1,23.6 40.1,23.6C 40.1,23.6 41.9,22.5 44.8,25.4C 47.7,28.3 47.6,33.6 45.3,33.9C 43.0,34.3 8.1,40.2 7.2,39.9 Z "/>
+							<Path Width="38.9" Height="34.6" Canvas.Left="6.4" Canvas.Top="33.2" Stretch="Fill" Fill="#FFDFBA35" Data="F1 M 6.4,38.8L 15.6,65.9C 15.6,65.9 18.1,68.6 28.5,67.7C 39.0,66.9 42.1,63.8 42.1,63.8L 45.4,33.7C 45.4,33.7 35.5,32.2 24.8,34.2C 14.1,36.2 7.1,38.5 6.4,38.8 Z "/>
+							<Path Width="37.5" Height="32.2" Canvas.Left="7.4" Canvas.Top="35.7" Stretch="Fill" Fill="#FFC9A626" Data="F1 M 7.4,40.9C 7.4,40.9 18.7,36.6 27.3,35.9C 35.8,35.3 44.9,36.2 44.9,36.2L 42.7,63.4C 42.7,63.4 36.5,67.5 28.8,67.9C 21.1,68.4 15.6,66.7 15.5,65.6C 15.4,64.4 7.2,40.9 7.4,40.9 Z "/>
+							<Path Width="7.6" Height="8.6" Canvas.Left="36.6" Canvas.Top="35.6" Stretch="Fill" Fill="#FFD5AE21" Data="F1 M 38.7,35.9L 44.3,42.8L 43.9,44.3L 36.6,35.6L 38.7,35.9 Z "/>
+							<Path Width="9.5" Height="17.0" Canvas.Left="11.0" Canvas.Top="36.9" Stretch="Fill" Fill="#FFD5AE21" Data="F1 M 18.1,37.6L 11.0,52.6L 11.8,54.0L 20.6,36.9L 18.1,37.6 Z "/>
+							<Path Width="18.6" Height="20.4" Canvas.Left="24.6" Canvas.Top="35.9" Stretch="Fill" Fill="#FFD5AE21" Data="F1 M 26.5,35.9L 43.3,54.9L 42.8,56.4L 24.6,36.4L 26.5,35.9 Z "/>
+							<Path Width="17.2" Height="29.4" Canvas.Left="15.1" Canvas.Top="35.5" Stretch="Fill" Fill="#FFD5AE21" Data="F1 M 30.4,35.5L 15.1,63.6L 15.9,64.9L 32.4,35.5L 30.4,35.5 Z "/>
+							<Path Width="26.2" Height="27.2" Canvas.Left="13.1" Canvas.Top="38.6" Stretch="Fill" Fill="#FFD5AE21" Data="F1 M 15.1,38.6L 39.4,65.0L 38.0,65.8L 13.1,39.0L 15.1,38.6 Z "/>
+							<Path Width="19.0" Height="31.4" Canvas.Left="24.4" Canvas.Top="36.1" Stretch="Fill" Fill="#FFD5AE21" Data="F1 M 41.6,36.1L 24.4,67.5L 26.1,67.5L 43.4,36.3L 41.6,36.1 Z "/>
+							<Path Width="20.9" Height="20.8" Canvas.Left="9.2" Canvas.Top="46.9" Stretch="Fill" Fill="#FFD5AE21" Data="F1 M 9.2,46.9L 30.1,67.7L 27.8,67.7L 10.2,49.8L 9.2,46.9 Z "/>
+							<Path Width="8.3" Height="13.5" Canvas.Left="35.0" Canvas.Top="52.6" Stretch="Fill" Fill="#FFD5AE21" Data="F1 M 43.3,52.6L 35.0,66.2L 37.2,65.6L 43.1,55.7L 43.3,52.6 Z "/>
+							<Path Width="28.0" Height="13.2" Canvas.Left="13.7" Canvas.Top="23.2" Stretch="Fill" Fill="#FFFB79A3" Data="F1 M 40.0,23.7C 40.0,23.7 33.8,29.0 27.5,31.0C 21.3,33.0 9.8,37.1 15.1,36.4C 20.1,35.6 38.5,28.4 40.7,25.2C 42.9,22.0 41.0,23.6 40.0,23.7 Z "/>
+							<Path Width="26.5" Height="12.6" Canvas.Left="9.8" Canvas.Top="16.3" Stretch="Fill" Fill="#FFFB79A3" Data="F1 M 33.0,16.6L 36.0,16.3C 36.0,16.3 37.4,16.7 34.1,18.9C 30.9,21.1 22.3,27.1 11.6,28.6C 6.4,29.3 13.2,29.6 21.4,24.7C 29.6,19.8 32.9,16.4 33.0,16.6 Z "/>
+							<Path Width="17.4" Height="8.5" Canvas.Left="11.5" Canvas.Top="10.9" Stretch="Fill" Fill="#FFFB79A3" Data="F1 M 28.7,10.9C 28.7,10.9 30.6,12.4 24.7,15.4C 18.8,18.4 11.5,19.5 11.5,19.5C 11.5,19.5 22.4,16.4 25.3,14.1C 28.2,11.9 28.8,10.7 28.7,10.9 Z "/>
+							<Path Width="1.3" Height="1.1" Canvas.Left="16.4" Canvas.Top="11.6" Stretch="Fill" Fill="#FFFF0000" Data="F1 M 16.9,11.6C 16.9,11.7 15.9,12.3 16.7,12.7C 17.6,13.1 17.9,12.3 17.7,12.0C 17.6,11.6 17.2,11.6 16.9,11.6 Z "/>
+							<Path Width="1.4" Height="1.2" Canvas.Left="15.0" Canvas.Top="32.3" Stretch="Fill" Fill="#FFFF5000" Data="F1 M 15.5,32.3C 15.5,32.4 14.4,33.0 15.3,33.4C 16.2,33.8 16.6,33.0 16.5,32.7C 16.3,32.3 15.9,32.3 15.5,32.3 Z "/>
+							<Path Width="2.3" Height="1.9" Canvas.Left="24.7" Canvas.Top="19.2" Stretch="Fill" Fill="#FF00E7FF" Data="F1 M 25.6,19.2C 25.6,19.3 23.9,20.4 25.3,21.0C 26.7,21.6 27.2,20.3 27.0,19.8C 26.8,19.1 26.2,19.1 25.6,19.2 Z "/>
+							<Path Width="2.0" Height="2.3" Canvas.Left="9.1" Canvas.Top="32.8" Stretch="Fill" Fill="#FF00E7FF" Data="F1 M 11.1,34.2C 11.0,34.2 11.1,32.2 9.8,33.0C 8.5,33.8 9.3,34.9 9.8,35.1C 10.5,35.2 10.8,34.7 11.1,34.2 Z "/>
+							<Path Width="1.5" Height="1.3" Canvas.Left="16.7" Canvas.Top="20.3" Stretch="Fill" Fill="#FFFF0064" Data="F1 M 17.2,20.3C 17.2,20.4 16.1,21.1 17.0,21.5C 18.0,21.9 18.3,21.0 18.2,20.7C 18.0,20.3 17.6,20.3 17.2,20.3 Z "/>
+							<Path Width="1.5" Height="1.3" Canvas.Left="31.5" Canvas.Top="25.5" Stretch="Fill" Fill="#FFFF0064" Data="F1 M 32.1,25.5C 32.1,25.6 30.9,26.3 31.9,26.7C 32.8,27.1 33.1,26.3 33.0,25.9C 32.8,25.5 32.5,25.5 32.1,25.5 Z "/>
+							<Path Width="1.3" Height="1.1" Canvas.Left="13.6" Canvas.Top="15.3" Stretch="Fill" Fill="#FFFFFF00" Data="F1 M 14.1,15.3C 14.1,15.4 13.1,16.0 13.9,16.4C 14.7,16.7 15.1,16.0 14.9,15.7C 14.8,15.3 14.4,15.3 14.1,15.3 Z "/>
+							<Path Width="1.3" Height="1.1" Canvas.Left="40.2" Canvas.Top="28.8" Stretch="Fill" Fill="#FFFFFF00" Data="F1 M 40.7,28.8C 40.7,28.8 39.7,29.5 40.5,29.8C 41.4,30.2 41.7,29.4 41.5,29.1C 41.4,28.7 41.0,28.7 40.7,28.8 Z "/>
+							<Path Width="2.7" Height="1.8" Canvas.Left="26.8" Canvas.Top="15.4" Stretch="Fill" Fill="#FF0096FF" Data="F1 M 29.3,15.4L 26.8,16.7L 27.1,17.2L 29.5,16.1L 29.3,15.4 Z "/>
+							<Path Width="2.7" Height="1.8" Canvas.Left="16.0" Canvas.Top="28.5" Stretch="Fill" Fill="#FF0096FF" Data="F1 M 18.5,28.5L 16.0,29.8L 16.3,30.3L 18.7,29.1L 18.5,28.5 Z "/>
+							<Path Width="2.3" Height="2.6" Canvas.Left="20.9" Canvas.Top="16.9" Stretch="Fill" Fill="#FFFFFF00" Data="F1 M 22.9,16.9L 20.9,19.0L 21.5,19.5L 23.2,17.5L 22.9,16.9 Z "/>
+							<Path Width="1.3" Height="2.8" Canvas.Left="37.9" Canvas.Top="19.1" Stretch="Fill" Fill="#FFFFFF00" Data="F1 M 39.2,21.9L 38.6,19.1L 37.9,19.3L 38.6,21.9L 39.2,21.9 Z "/>
+							<Path Width="2.9" Height="1.5" Canvas.Left="19.9" Canvas.Top="11.6" Stretch="Fill" Fill="#FF64FF00" Data="F1 M 22.9,12.7L 20.1,11.6L 19.9,12.4L 22.5,13.2L 22.9,12.7 Z "/>
+							<Path Width="2.8" Height="1.2" Canvas.Left="26.9" Canvas.Top="28.1" Stretch="Fill" Fill="#FF64FF00" Data="F1 M 26.9,29.4L 29.8,28.9L 29.6,28.1L 27.0,28.7L 26.9,29.4 Z "/>
+							<Path Width="1.4" Height="2.0" Canvas.Left="26.8" Canvas.Top="8.5" Stretch="Fill" Fill="#FFC80FA0" Data="F1 M 27.2,10.6L 28.3,8.8L 27.8,8.5L 26.8,10.2L 27.2,10.6 Z "/>
+							<Path Width="1.4" Height="2.0" Canvas.Left="34.8" Canvas.Top="29.9" Stretch="Fill" Fill="#FFC80FA0" Data="F1 M 35.2,32.0L 36.3,30.1L 35.8,29.9L 34.8,31.6L 35.2,32.0 Z "/>
+							<Path Width="1.8" Height="1.8" Canvas.Left="30.7" Canvas.Top="13.4" Stretch="Fill" Fill="#FFFF0000" Data="F1 M 32.5,15.1L 31.1,13.4L 30.7,13.8L 32.1,15.3L 32.5,15.1 Z "/>
+							<Path Width="1.8" Height="1.8" Canvas.Left="22.8" Canvas.Top="27.2" Stretch="Fill" Fill="#FFFF0000" Data="F1 M 24.6,28.9L 23.2,27.2L 22.8,27.6L 24.2,29.1L 24.6,28.9 Z "/>
+							<Path Width="2.1" Height="2.6" Canvas.Left="12.3" Canvas.Top="22.5" Stretch="Fill" Fill="#FFC80FA0" Data="F1 M 12.3,22.6L 13.8,25.2L 14.4,24.7L 12.9,22.5L 12.3,22.6 Z "/>
+							<Path Width="2.1" Height="2.6" Canvas.Left="34.0" Canvas.Top="20.2" Stretch="Fill" Fill="#FFC80FA0" Data="F1 M 34.0,20.4L 35.5,22.9L 36.1,22.5L 34.7,20.2L 34.0,20.4 Z "/>
+						</Canvas>
+					</Viewbox>
+					<Viewbox Width="56.1" Height="42.5" Canvas.Left="0" Canvas.Top="0">
+						<Canvas Width="56.1" Height="42.5">
+							<Path Width="68" Height="52.8" Canvas.Left="-6.2" Canvas.Top="-5.2" Stretch="Fill" Fill="#FF21C1D5" Data="F1 M 7.5,25.3C 7.5,25.3 1.4,13.8 10.3,8.7C 17.1,4.8 18.3,9.4 18.3,9.4C 18.3,9.4 19.5,0 29.2,0.1C 36.1,0.3 38.4,8.4 38.4,8.4C 38.4,8.4 45.1,1.3 49.6,6.0C 54.1,10.7 49.3,13.6 49.3,13.6C 49.3,13.6 56.1,17.7 54.3,22.8C 52.5,28.0 44.6,26.1 44.6,26.1C 44.6,26.1 46.6,31.9 39.8,33.8C 33.0,35.7 32.8,30.2 32.8,30.2C 32.8,30.2 35.4,34.6 28.8,38.2C 22.2,41.9 20.4,34.1 20.4,34.1C 20.4,34.1 22.4,41.2 15.6,41.8C 8.8,42.5 8.7,34.5 8.7,34.5C 8.7,34.5 1.6,38.4 0.8,31.4C 0,24.4 8.2,24.3 7.5,25.3 Z " UseLayoutRounding="False"/>
+							<Path Width="56.6" Height="42.8" Canvas.Left="-0.6" Canvas.Top="1.5" Stretch="Fill" Fill="White" Data="F1 M 10.8,26.2C 10.8,26.2 5.9,16.9 13.4,12.6C 19.1,9.4 20.1,13.2 20.1,13.2C 20.1,13.2 21.2,5.4 29.3,5.5C 35.0,5.5 36.8,12.1 36.8,12.1C 36.8,12.1 42.5,6.2 46.2,10.0C 49.9,13.8 45.9,16.2 45.9,16.2C 45.9,16.2 51.5,19.5 50.0,23.7C 48.4,27.9 41.8,26.5 41.8,26.5C 41.8,26.5 43.4,31.2 37.7,32.8C 32.0,34.4 31.9,30.0 31.9,30.0C 31.9,30.0 34.1,33.5 28.5,36.5C 22.9,39.6 21.5,33.2 21.5,33.2C 21.5,33.2 23.1,39.0 17.5,39.6C 11.8,40.2 11.8,33.7 11.8,33.7C 11.8,33.7 5.8,37.0 5.2,31.3C 4.6,25.6 11.5,25.4 10.8,26.2 Z " UseLayoutRounding="False"/>
+							<TextBlock x:Name="t18_Free_Copy" TextAlignment="Center" FontFamily="Comic Sans MS" FontSize="12" VerticalAlignment="Top" HorizontalAlignment="Left" Height="18.9" Text="free!" Foreground="#FFFF5000" Width="34" Canvas.Left="-26" Canvas.Top="-5.5" UseLayoutRounding="False" d:LayoutRounding="Auto"><TextBlock.RenderTransform>
+									<CompositeTransform ScaleY="1.33" ScaleX="1.33" TranslateX="27.6" TranslateY="27.6" Rotation="-22.8"/>
+								</TextBlock.RenderTransform></TextBlock>
+						</Canvas>
+					</Viewbox>
+				</Canvas>
+			</Viewbox>
+			<Viewbox Height="106.0" Canvas.Left="256" Canvas.Top="96" Width="100.1">
+				<Canvas Width="100.1" Height="106.0">
+					<Viewbox Width="90.0" Height="84.0" Canvas.Left="10.0" Canvas.Top="21.9">
+						<Canvas Width="90.0" Height="84.0">
+							<Path Width="89.4" Height="83.2" Canvas.Left="0.4" Canvas.Top="0.4" Stretch="Fill" Fill="#FFA5DD22" Data="F1 M 13.9,1.3C 7.0,2.5 1.7,12.6 0.8,27.5C 0,42.3 0.4,52.6 1.7,61.7C 2.8,69.8 6.6,82.3 23.4,83.1C 40.2,84.0 67.1,84.0 75.1,82.3C 83.0,80.5 88.1,68.2 89.0,56.1C 89.8,43.0 90.0,40.1 89.6,29.9C 89.2,19.8 89.2,3.5 77.7,1.8C 67.5,0.2 20.9,0 13.9,1.3 Z "/>
+							<Viewbox Width="78.7" Height="50.6" Canvas.Left="7.0" Canvas.Top="13.9">
+								<Canvas Width="78.7" Height="50.6">
+									<Viewbox Width="78.7" Height="26.5" Canvas.Left="0" Canvas.Top="24.0">
+										<Canvas Width="78.7" Height="26.5">
+											<Path Width="75.4" Height="25.8" Canvas.Left="0.6" Canvas.Top="0.2" Stretch="Fill" Fill="#FFE17600" Data="M 75.2,10.2C 78.7,21.0 71.0,23.4 66.1,24.8C 60.5,26.5 38.9,26.0 34.1,25.8C 26.9,25.4 17.3,25.8 5.7,21.6C 0.4,19.6 0.6,15.2 0.6,12.2C 0.7,9.5 2.6,7.4 4.5,5.9C 7.6,3.5 12.1,2.6 19.4,1.6C 21.7,1.3 51.0,0 54.0,0.2C 55.5,0.4 72.6,2.2 75.2,10.2 Z "/>
+											<Path Width="75.5" Height="22.6" Canvas.Left="0.5" Canvas.Top="0.2" Stretch="Fill" Fill="#FFFF8600" Data="M 75.2,8.9C 78.7,18.3 71.0,20.4 66.1,21.7C 60.5,23.1 38.8,23.1 34.0,22.6C 27.2,21.8 17.6,23.0 5.7,19.0C 1.7,17.6 6.1e-005,15.5 0.6,10.8C 0.9,8.5 2.6,6.6 4.5,5.3C 7.6,3.2 12.1,2.5 19.4,1.5C 21.7,1.3 51.0,0.0 54.0,0.3C 55.5,0.4 72.6,1.9 75.2,8.9 Z "/>
+										</Canvas>
+									</Viewbox>
+									<Path Width="69.1" Height="19.7" Canvas.Left="3.1" Canvas.Top="24.5" Stretch="Fill" Fill="#FFDC1D7D" Data="M 17.6,25.6C 17.4,24.9 15.2,24.6 14.0,24.6C 12.8,24.6 11.8,26.1 11.6,26.1C 11.4,26.1 9.4,25.5 8.1,26.6C 7.2,27.3 7.7,27.9 7.4,27.8C 6.7,27.5 5.1,27.5 4.4,28.4C 3.5,29.8 4.5,30.5 4.5,30.6C 4.5,30.8 2.8,31.2 3.1,32.9C 3.4,34.4 4.8,34.4 5.1,34.9C 5.2,35.0 3.6,36.2 4.5,37.1C 5.8,38.5 8.5,38.1 8.3,38.1C 8.1,38.1 7.7,39.2 9.0,39.7C 10.2,40.2 11.6,39.3 12.0,39.6C 12.6,40.0 12.2,41.1 13.4,41.3C 14.6,41.5 14.6,40.7 15.3,40.6C 15.4,40.5 16.0,42.1 17.3,42.1C 19.3,42.0 20.0,41.2 20.1,41.1C 20.3,41.1 21.2,43.0 22.8,42.8C 24.3,42.6 24.8,41.5 25.0,41.5C 25.2,41.5 26.2,42.7 27.9,42.7C 29.7,42.7 30.1,41.5 30.3,41.5C 30.5,41.6 31.5,43.1 33.5,43.3C 35.1,43.4 35.4,41.6 35.6,41.6C 35.8,41.6 35.9,43.1 37.3,43.0C 39.4,42.9 39.9,41.9 40.3,42.1C 41.3,42.6 41.1,44.1 43.1,43.9C 44.5,43.7 44.9,42.1 45.3,42.3C 45.5,42.4 46.7,44.4 48.7,44.2C 50.1,44.1 50.6,42.1 50.7,42.1C 50.9,42.1 52.0,43.9 53.6,43.6C 55.3,43.3 55.3,41.7 55.8,41.7C 56.0,41.8 57.2,43.9 59.4,43.0C 60.2,42.7 59.9,41.3 60.1,40.5C 60.1,40.5 60.3,39.7 60.4,40.2C 60.5,40.7 60.5,41.2 60.8,41.6C 61.2,42.1 62.0,42.5 62.7,42.3C 64.0,41.9 63.8,40.2 64.0,40.2C 64.2,40.2 65.0,41.2 66.2,40.8C 67.2,40.4 67.2,38.7 66.7,38.7C 66.5,38.7 68.3,40.1 69.1,39.4C 70.3,38.2 69.4,37.1 69.3,37.0C 69.2,36.9 68.8,36.5 68.8,36.7C 68.8,37.2 71.5,36.9 71.9,36.3C 72.2,35.7 72.3,34.8 71.9,34.3C 71.8,34.1 70.5,33.9 70.5,33.7C 70.4,33.5 71.7,32.0 71.2,30.7C 70.5,29.1 68.8,29.3 68.7,29.2C 68.2,28.7 69.7,28.5 69.2,28.0C 68.1,26.6 66.9,26.6 66.3,26.8C 65.8,27.1 65.7,25.7 65.4,25.2C 65.0,24.5 63.8,24.4 63.0,24.6C 62.5,24.7 62.3,25.3 62.1,25.8"/>
+									<Path Width="64.1" Height="16.9" Canvas.Left="5.9" Canvas.Top="23.9" Stretch="Fill" Fill="#FFF53F9B" Data="M 69.4,30.4C 72.3,37.4 65.8,39.0 61.6,40.0C 56.8,41.1 38.5,41.1 34.4,40.7C 28.6,40.2 20.5,41.1 10.3,38.0C 7.0,37.0 5.5,35.4 6.0,31.9C 6.3,30.2 7.7,28.8 9.3,27.8C 11.9,26.2 15.8,25.7 22.0,25.0C 24.0,24.8 48.8,23.8 51.3,24.0C 52.6,24.0 67.2,25.2 69.4,30.4 Z "/>
+									<Viewbox Width="48.4" Height="39.2" Canvas.Left="5.7" Canvas.Top="0">
+										<Canvas Width="48.4" Height="39.2">
+											<Path Width="27.7" Height="29.2" Canvas.Left="20.6" Canvas.Top="0.1" Stretch="Fill" Fill="#FF54B6F4" Data="F1 M 20.6,5.2C 20.6,5.2 22.7,0.3 33.8,0.1C 45.0,0 48.4,5.9 48.4,5.9L 44.7,25.2C 45.2,25.0 46.3,24.4 46.8,23.0C 47.3,22.1 48.4,24.6 48.4,24.6C 48.4,24.6 45.1,28.8 36.8,29.3C 28.5,29.8 24.9,27.7 22.9,26.1C 20.8,24.5 21.4,23.5 21.5,23.6L 23.5,23.0C 23.5,23.0 23.5,24.4 24.8,24.9L 20.6,5.2 Z "/>
+											<Path Width="27.7" Height="29.2" Canvas.Left="19.7" Canvas.Top="1.1" Stretch="Fill" Fill="#FFAAEAFF" Data="F1 M 19.7,6.2C 19.7,6.2 21.7,1.3 32.9,1.1C 44.0,1.0 47.4,6.9 47.4,6.9L 43.7,26.3C 44.2,26.0 45.3,25.4 45.8,24.0C 46.3,23.1 47.4,25.6 47.4,25.6C 47.4,25.6 44.1,29.8 35.8,30.3C 27.5,30.8 23.9,28.7 21.9,27.1C 19.8,25.5 20.4,24.5 20.5,24.6L 22.5,24.1C 22.5,24.1 22.5,25.4 23.8,26.0L 19.7,6.2 Z "/>
+											<Path Width="21.4" Height="23.6" Canvas.Left="23.3" Canvas.Top="9.2" Stretch="Fill" Fill="#FF7FC3DA" Data="F1 M 25.0,17.1L 44.7,9.2L 42.1,25.0L 23.3,32.9L 25.0,17.1 Z "/>
+											<Path Width="19.1" Height="22.3" Canvas.Left="4.7" Canvas.Top="6.9" Stretch="Fill" Fill="#FF6CD9FE" Data="F1 M 4.7,14.3L 23.4,6.9L 23.9,22.7L 6.2,29.3L 4.7,14.3 Z "/>
+											<Path Width="17.0" Height="7.3" Canvas.Left="6.6" Canvas.Top="6.1" Stretch="Fill" Fill="#FF54B6F4" Data="F1 M 6.9,12.1L 22.3,6.1L 23.7,6.7L 6.6,13.4L 6.9,12.1 Z "/>
+											<Path Width="27.7" Height="29.2" Canvas.Left="1.0" Canvas.Top="8.6" Stretch="Fill" Fill="#FF54B6F4" Data="F1 M 1.0,13.7C 1.0,13.7 3.1,8.8 14.2,8.6C 25.4,8.5 28.8,14.4 28.8,14.4L 25.1,33.7C 25.6,33.5 26.7,32.9 27.2,31.5C 27.7,30.6 28.8,33.1 28.8,33.1C 28.8,33.1 25.5,37.3 17.2,37.8C 8.9,38.3 5.3,36.2 3.3,34.6C 1.2,33.0 1.8,32.0 1.9,32.1L 3.9,31.5C 3.9,31.5 3.9,32.9 5.2,33.4L 1.0,13.7 Z "/>
+											<Path Width="27.7" Height="29.2" Canvas.Left="-1.3e-009" Canvas.Top="9.5" Stretch="Fill" Fill="#FFC4F0FF" Data="F1 M 0,14.6C -6.1e-005,14.6 2.0,9.7 13.1,9.5C 24.3,9.3 27.7,15.2 27.7,15.2L 24.0,34.6C 24.5,34.4 25.6,33.8 26.1,32.3C 26.6,31.5 27.7,33.9 27.7,33.9C 27.7,33.9 24.4,38.2 16.1,38.7C 7.8,39.2 4.2,37.1 2.2,35.4C 0.1,33.8 0.7,32.8 0.8,33.0L 2.8,32.4C 2.8,32.4 2.8,33.7 4.1,34.3L 0,14.6 Z "/>
+											<Path Width="3.6" Height="3.2" Canvas.Left="11.4" Canvas.Top="12.8" Stretch="Fill" Fill="#FFFFFFFF" Data="M 13.4,13.8C 13.4,13.8 13.7,12.6 14.8,12.8C 15.9,13.1 13.9,15.4 13.3,16.0C 13.2,15.9 10.5,13.2 11.7,12.8C 12.8,12.5 13.4,13.7 13.4,13.8 Z "/>
+											<Path Width="3.6" Height="3.2" Canvas.Left="31.8" Canvas.Top="3.9" Stretch="Fill" Fill="#FFFFFFFF" Data="M 33.8,4.9C 33.8,4.9 34.1,3.7 35.2,3.9C 36.3,4.2 34.3,6.5 33.7,7.2C 33.6,7.0 30.9,4.3 32.1,3.9C 33.2,3.6 33.8,4.8 33.8,4.9 Z "/>
+											<Path Width="17.0" Height="7.3" Canvas.Left="27.7" Canvas.Top="8.7" Stretch="Fill" Fill="#FF54B6F4" Data="F1 M 28.0,14.7L 43.4,8.7L 44.7,9.3L 27.7,16.0L 28.0,14.7 Z "/>
+										</Canvas>
+									</Viewbox>
+									<Viewbox Width="24.5" Height="25.1" Canvas.Left="44.4" Canvas.Top="13.9">
+										<Canvas Width="24.5" Height="25.1">
+											<Path Width="3.3" Height="3.7" Canvas.Left="16.7" Canvas.Top="0.9" Stretch="Fill" Fill="#FFD1A26D" Data="M 16.7,2.1C 16.6,1.8 17.4,0 19.1,1.5C 20.7,3.0 20.0,4.2 19.1,4.6C 18.1,4.9 16.7,3.0 16.7,2.1 Z "/>
+											<Path Width="3.6" Height="3.5" Canvas.Left="5.2" Canvas.Top="1.0" Stretch="Fill" Fill="#FFD1A26D" Data="M 8.8,2.2C 8.8,2.2 7.2,0.4 6.2,1.3C 5.1,2.1 4.6,4.1 5.9,4.6C 7.2,5.0 9.0,2.2 8.8,2.2 Z "/>
+											<Path Width="11.1" Height="13.9" Canvas.Left="7.2" Canvas.Top="8.6" Stretch="Fill" Fill="#FFBC8A53" Data="M 7.5,16.9C 7.5,16.9 6.4,10.2 8.4,9.3C 10.4,8.5 15.3,7.6 17.2,10.9C 19.1,14.2 18.1,17.8 17.7,18.7C 17.2,19.5 14.1,22.8 12.1,22.5C 10.1,22.1 8.5,21.4 8.1,20.1C 7.6,18.9 7.6,17.1 7.5,16.9 Z "/>
+											<Path Width="7.8" Height="6.6" Canvas.Left="2.3" Canvas.Top="17.0" Stretch="Fill" Fill="#FFD1A26D" Data="M 3.5,23.6C 3.5,23.6 6.8,23.7 8.9,22.7C 11.0,21.7 10.2,17.1 7.8,17.0C 5.5,16.9 3.0,17.9 2.4,18.0C 1.8,18.1 3.5,23.7 3.5,23.6 Z "/>
+											<Path Width="5.9" Height="7.0" Canvas.Left="0.5" Canvas.Top="16.8" Stretch="Fill" Fill="#FFD1A26D" Data="M 1.2,17.9C 1.2,17.9 2.9,16.4 4.4,16.9C 5.9,17.4 7.4,19.7 5.7,22.2C 4.9,23.5 3.9,23.8 3.1,23.8C 2.3,23.8 1.6,23.3 1.2,22.8C 0.5,21.9 0.4,20.0 0.6,19.4C 0.9,18.8 1.3,17.8 1.2,17.9 Z "/>
+											<Path Width="3.5" Height="3.9" Canvas.Left="1.4" Canvas.Top="19.1" Stretch="Fill" Fill="#FF895D2B" Data="M 4.6,19.7C 4.6,19.8 2.4,18.1 1.7,20.0C 1.0,21.9 1.8,23.0 3.2,23.0C 4.6,23.0 5.5,20.6 4.6,19.7 Z "/>
+											<Path Width="10.1" Height="7.9" Canvas.Left="14.2" Canvas.Top="17.1" Stretch="Fill" Fill="#FFD1A26D" Data="M 17.2,17.1C 17.2,17.1 13.4,18.6 14.4,21.3C 15.3,24.0 20.4,25.1 20.4,25.1C 20.4,25.1 24.5,24.6 24.3,21.2C 24.1,17.8 20.6,19.2 19.6,18.3C 18.5,17.4 17.3,17.0 17.2,17.1 Z "/>
+											<Path Width="3.6" Height="4.2" Canvas.Left="19.8" Canvas.Top="19.8" Stretch="Fill" Fill="#FF895D2B" Data="M 22.5,19.8C 22.5,19.9 19.9,20.0 19.8,22.2C 19.7,24.3 21.3,24.2 22.0,23.8C 22.8,23.3 24.4,20.0 22.5,19.8 Z "/>
+											<Path Width="8.7" Height="6.6" Canvas.Left="0.5" Canvas.Top="9.8" Stretch="Fill" Fill="#FFD1A26D" Data="M 7.7,9.8C 7.7,9.8 9.5,10.3 9.3,12.3C 9.0,14.2 8.7,14.3 8.7,14.3C 8.7,14.3 5.2,15.8 4.0,16.3C 2.8,16.8 0,16.3 0.6,14.8C 1.3,13.4 3.3,11.3 4.8,10.9C 6.2,10.5 7.5,9.8 7.7,9.8 Z "/>
+											<Path Width="8.6" Height="7.0" Canvas.Left="14.8" Canvas.Top="10.1" Stretch="Fill" Fill="#FFD1A26D" Data="M 16.4,10.1C 16.4,10.1 13.9,11.8 15.1,13.5C 16.3,15.2 20.2,17.0 21.8,17.1C 23.3,17.2 24.3,14.7 22.2,13.3C 20.0,12.0 16.5,9.9 16.4,10.1 Z "/>
+											<Path Width="1.8" Height="2.0" Canvas.Left="17.4" Canvas.Top="1.8" Stretch="Fill" Fill="#FF895D2B" Data="M 17.4,2.2C 17.4,2.2 17.7,1.5 18.4,2.0C 19.1,2.4 19.4,3.0 19.1,3.4C 18.7,3.9 18.2,3.9 18.2,3.9L 17.4,2.2 Z "/>
+											<Path Width="2.0" Height="2.1" Canvas.Left="5.7" Canvas.Top="1.7" Stretch="Fill" Fill="#FF895D2B" Data="M 7.8,2.2C 7.8,2.2 7.1,1.5 6.6,1.8C 6.2,2.1 5.5,2.7 5.8,3.3C 6.2,3.9 6.3,4.0 6.4,3.9C 6.6,3.7 7.8,2.2 7.8,2.2 Z "/>
+											<Path Width="12.7" Height="10.7" Canvas.Left="6.0" Canvas.Top="0.8" Stretch="Fill" Fill="#FFD1A26D" Data="M 6.2,4.6C 5.9,4.8 5.0,10.7 11.9,11.4C 18.7,12.1 18.7,7.1 18.7,5.8C 18.7,4.5 18.1,0.5 12.8,0.8C 7.5,1.0 5.9,3.4 6.2,4.6 Z "/>
+											<Path Width="6.5" Height="5.2" Canvas.Left="9.0" Canvas.Top="5.0" Stretch="Fill" Fill="#FF895D2B" Data="M 9.9,6.3C 9.9,6.3 11.3,4.2 13.6,5.3C 16.0,6.3 15.9,8.4 14.8,9.3C 13.8,10.3 11.2,10.8 9.6,9.2C 8.1,7.5 9.9,6.3 9.9,6.3 Z "/>
+											<Path Width="0.9" Height="0.7" Canvas.Left="8.3" Canvas.Top="4.8" Stretch="Fill" Fill="#FF462A0D" Data="M 9.3,5.1C 9.3,4.8 8.5,4.7 8.4,5.0C 8.3,5.1 8.3,5.3 8.4,5.3C 8.4,5.5 8.6,5.5 8.7,5.5C 8.8,5.6 8.9,5.6 9.0,5.5C 9.2,5.4 9.3,5.3 9.3,5.1 Z "/>
+											<Path Width="0.9" Height="0.7" Canvas.Left="15.1" Canvas.Top="4.8" Stretch="Fill" Fill="#FF462A0D" Data="M 16.1,5.0C 16.1,4.7 15.3,4.7 15.2,5.0C 15.1,5.1 15.1,5.2 15.2,5.3C 15.2,5.4 15.4,5.5 15.5,5.5C 15.6,5.5 15.7,5.6 15.8,5.5C 16.0,5.4 16.1,5.2 16.1,5.0 Z "/>
+											<Path Width="2.4" Height="2.0" Canvas.Left="11.4" Canvas.Top="6.2" Stretch="Fill" Fill="#FF462A0D" Data="M 11.4,7.0C 11.4,7.0 11.7,5.7 13.4,6.4C 14.1,6.6 13.9,7.6 12.9,8.1C 12.0,8.6 11.4,7.1 11.4,7.0 Z "/>
+											<Path Width="6.0" Height="7.2" Canvas.Left="9.3" Canvas.Top="12.7" Stretch="Fill" Fill="#FF895D2B" Data="M 9.5,15.0C 9.5,15.0 10.2,11.9 12.7,12.8C 15.3,13.8 15.6,15.4 15.1,16.3C 14.7,17.2 14.7,19.9 12.5,19.9C 10.3,19.9 9.7,18.2 9.5,16.9C 9.2,15.7 9.4,14.8 9.5,15.0 Z "/>
+										</Canvas>
+									</Viewbox>
+									<Viewbox Width="10.1" Height="23.4" Canvas.Left="35.7" Canvas.Top="14.4">
+										<Canvas Width="10.1" Height="23.4">
+											<Path Width="8.7" Height="14.8" Canvas.Left="1.0" Canvas.Top="7.5" Stretch="Fill" Fill="#FFFFE7F3" Data="M 1.1,8.2C 1.1,8.2 3.7,9.9 5.7,9.4C 7.8,8.8 9.0,7.5 9.0,7.5C 9.0,7.5 10.1,8.6 9.4,11.6C 8.7,14.7 9.3,16.2 9.7,19.1C 10.1,21.3 5.5,23.4 2.7,21.8C 0,20.2 1.7,16.4 1.9,14.3C 2.1,12.1 0.8,10.4 1.0,8.7L 1.1,8.2 Z "/>
+											<Path Width="8.0" Height="4.7" Canvas.Left="1.1" Canvas.Top="4.7" Stretch="Fill" Fill="#FFFF7D00" Data="M 1.1,5.5L 1.1,8.0C 1.1,8.0 2.4,9.7 5.0,9.5C 7.5,9.3 9.1,7.9 9.1,6.9C 9.1,5.9 9.0,4.7 9.0,4.7C 9.0,4.7 7.2,7.7 3.7,7.1C 1.4,6.7 1.1,5.5 1.1,5.5 Z "/>
+											<Path Width="7.9" Height="3.8" Canvas.Left="1.2" Canvas.Top="3.4" Stretch="Fill" Fill="#FFFB9839" Data="M 1.2,5.8C 1.2,5.8 0.6,4.6 2.6,4.0C 4.6,3.3 6.3,3.3 7.7,3.7C 9.1,4.1 9.2,4.6 9.0,4.9C 8.6,5.7 6.7,7.2 5.1,7.2C 2.1,7.3 1.2,5.8 1.2,5.8 Z "/>
+											<Path Width="5.3" Height="5.2" Canvas.Left="2.4" Canvas.Top="0.2" Stretch="Fill" Fill="#FFFFEBC2" Data="M 2.4,4.3C 2.4,4.3 3.1,5.7 5.0,5.5C 6.9,5.2 7.9,4.1 7.8,3.8C 7.7,3.5 6.3,3.2 6.1,2.4C 5.9,1.6 6.4,0.7 5.3,0.3C 4.3,-0.0 4.1,0.9 4.1,1.3C 4.1,1.7 4.4,2.6 4.0,3.0C 3.7,3.5 2.4,4.3 2.4,4.3 Z "/>
+											<Path Width="0.5" Height="9.6" Canvas.Left="6.8" Canvas.Top="10.2" Stretch="Fill" StrokeThickness="0.5" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="2.7" Stroke="#FF003B61" Data="M 7.1,10.5L 7.1,19.6"/>
+											<Path Width="0.7" Height="0.5" Canvas.Left="6.4" Canvas.Top="11.8" Stretch="Fill" StrokeThickness="0.5" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="2.7" Stroke="#FF003B61" Fill="#FFFF99EC" Data="M 6.7,12.2C 6.7,12.2 6.7,12.2 6.8,12.2C 6.8,12.2 6.9,12.1 6.9,12.1"/>
+											<Path Width="0.7" Height="0.5" Canvas.Left="6.5" Canvas.Top="10.2" Stretch="Fill" StrokeThickness="0.5" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="2.7" Stroke="#FF003B61" Fill="#FFFF99EC" Data="M 6.7,10.5C 6.8,10.5 6.8,10.5 6.9,10.5C 6.9,10.5 6.9,10.5 7.0,10.4"/>
+											<Path Width="1.2" Height="0.7" Canvas.Left="6.1" Canvas.Top="13.4" Stretch="Fill" StrokeThickness="0.5" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="2.7" Stroke="#FF003B61" Fill="#FFFF99EC" Data="M 6.4,13.9C 6.6,13.8 6.9,13.8 7.1,13.6"/>
+											<Path Width="1.1" Height="0.5" Canvas.Left="6.2" Canvas.Top="15.1" Stretch="Fill" StrokeThickness="0.5" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="2.7" Stroke="#FF003B61" Fill="#FFFF99EC" Data="M 6.4,15.4C 6.7,15.4 6.9,15.4 7.1,15.3"/>
+											<Path Width="0.9" Height="0.5" Canvas.Left="6.4" Canvas.Top="16.5" Stretch="Fill" StrokeThickness="0.5" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="2.7" Stroke="#FF003B61" Fill="#FFFF99EC" Data="M 6.7,16.8C 6.8,16.8 6.9,16.8 7.1,16.7"/>
+											<Path Width="0.9" Height="0.5" Canvas.Left="6.4" Canvas.Top="19.5" Stretch="Fill" StrokeThickness="0.5" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="2.7" Stroke="#FF003B61" Fill="#FFFF99EC" Data="M 6.6,19.8C 6.8,19.8 6.9,19.8 7.0,19.8"/>
+											<Path Width="0.7" Height="0.5" Canvas.Left="6.4" Canvas.Top="18.1" Stretch="Fill" StrokeThickness="0.5" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="2.7" Stroke="#FF003B61" Fill="#FFFF99EC" Data="M 6.7,18.3C 6.7,18.3 6.8,18.3 6.8,18.3C 6.8,18.3 6.9,18.3 6.9,18.3"/>
+										</Canvas>
+									</Viewbox>
+								</Canvas>
+							</Viewbox>
+						</Canvas>
+					</Viewbox>
+					<Viewbox Width="56.1" Height="42.5" Canvas.Left="0" Canvas.Top="0">
+						<Canvas Width="56.1" Height="42.5">
+							<Path Width="70" Height="54.4" Canvas.Left="-7.2" Canvas.Top="-6.0" Stretch="Fill" Fill="#FFFF5000" Data="F1 M 7.5,25.3C 7.5,25.3 1.4,13.8 10.3,8.7C 17.1,4.8 18.3,9.4 18.3,9.4C 18.3,9.4 19.5,0 29.2,0.1C 36.1,0.3 38.4,8.4 38.4,8.4C 38.4,8.4 45.1,1.3 49.6,6.0C 54.1,10.7 49.3,13.6 49.3,13.6C 49.3,13.6 56.1,17.7 54.3,22.8C 52.5,28.0 44.6,26.1 44.6,26.1C 44.6,26.1 46.6,31.9 39.8,33.8C 33.0,35.7 32.8,30.2 32.8,30.2C 32.8,30.2 35.4,34.6 28.8,38.2C 22.2,41.9 20.4,34.1 20.4,34.1C 20.4,34.1 22.4,41.2 15.6,41.8C 8.8,42.5 8.7,34.5 8.7,34.5C 8.7,34.5 1.6,38.4 0.8,31.4C 0,24.4 8.2,24.3 7.5,25.3 Z " UseLayoutRounding="False"/>
+							<Path Width="58.3" Height="44.0" Canvas.Left="-1.4" Canvas.Top="0.9" Stretch="Fill" Fill="White" Data="F1 M 10.8,26.2C 10.8,26.2 5.9,16.9 13.4,12.6C 19.1,9.4 20.1,13.2 20.1,13.2C 20.1,13.2 21.2,5.4 29.3,5.5C 35.0,5.5 36.8,12.1 36.8,12.1C 36.8,12.1 42.5,6.2 46.2,10.0C 49.9,13.8 45.9,16.2 45.9,16.2C 45.9,16.2 51.5,19.5 50.0,23.7C 48.4,27.9 41.8,26.5 41.8,26.5C 41.8,26.5 43.4,31.2 37.7,32.8C 32.0,34.4 31.9,30.0 31.9,30.0C 31.9,30.0 34.1,33.5 28.5,36.5C 22.9,39.6 21.5,33.2 21.5,33.2C 21.5,33.2 23.1,39.0 17.5,39.6C 11.8,40.2 11.8,33.7 11.8,33.7C 11.8,33.7 5.8,37.0 5.2,31.3C 4.6,25.6 11.5,25.4 10.8,26.2 Z " UseLayoutRounding="False"/>
+							<TextBlock x:Name="t18_Free" TextAlignment="Center" FontFamily="Comic Sans MS" FontSize="12" VerticalAlignment="Top" HorizontalAlignment="Left" Height="18.9" Text="free!" Foreground="#FFFF5000" Width="34" Canvas.Left="-26" Canvas.Top="-6" UseLayoutRounding="False" d:LayoutRounding="Auto"><TextBlock.RenderTransform>
+									<CompositeTransform ScaleY="1.33" ScaleX="1.33" TranslateX="27.6" TranslateY="27.6" Rotation="-22.8"/>
+								</TextBlock.RenderTransform></TextBlock>
+						</Canvas>
+					</Viewbox>
+				</Canvas>
+			</Viewbox>
+			<TextBlock x:Name="t18_ActivateYourAccount" TextAlignment="Center" FontFamily="Comic Sans MS" FontSize="14.1" VerticalAlignment="Top" HorizontalAlignment="Left" Height="24" Text="Activate your account to create" Foreground="#FFFF5000" Width="249" Canvas.Left="2"><TextBlock.RenderTransform>
+					<CompositeTransform ScaleY="1.33" ScaleX="1.33" TranslateX="27.6" TranslateY="27.6"/>
+				</TextBlock.RenderTransform></TextBlock>
+			<TextBlock x:Name="t18_CoolStuff" TextAlignment="Center" FontFamily="Comic Sans MS" FontSize="14.1" VerticalAlignment="Top" HorizontalAlignment="Left" Height="24" Text="cool stuff for me!" Foreground="#FFFF5000" Width="249" Canvas.Left="1" Canvas.Top="28"><TextBlock.RenderTransform>
+					<CompositeTransform ScaleY="1.33" ScaleX="1.33" TranslateX="27.6" TranslateY="27.6"/>
+				</TextBlock.RenderTransform></TextBlock>
+			<TextBlock x:Name="t18_DrawWorld" TextAlignment="Center" FontFamily="Comic Sans MS" FontSize="12" VerticalAlignment="Top" HorizontalAlignment="Left" Height="24" Text="Draw a world!" Foreground="#FFFF5000" Width="89" Canvas.Left="-3" Canvas.Top="175"><TextBlock.RenderTransform>
+					<CompositeTransform ScaleY="1.33" ScaleX="1.33" TranslateX="27.6" TranslateY="27.6"/>
+				</TextBlock.RenderTransform></TextBlock>
+			<TextBlock x:Name="t18_DrawFood" TextAlignment="Center" FontFamily="Comic Sans MS" FontSize="12" VerticalAlignment="Top" HorizontalAlignment="Left" Height="24" Text="Draw food!" Foreground="#FFFF5000" Width="89" Canvas.Left="110" Canvas.Top="175"><TextBlock.RenderTransform>
+					<CompositeTransform ScaleY="1.33" ScaleX="1.33" TranslateX="27.6" TranslateY="27.6"/>
+				</TextBlock.RenderTransform></TextBlock>
+			<TextBlock x:Name="t18_DrawFood_Copy" TextAlignment="Center" FontFamily="Comic Sans MS" FontSize="12" VerticalAlignment="Top" HorizontalAlignment="Left" Height="24" Text="A baby pet!" Foreground="#FFFF5000" Width="89" Canvas.Left="222" Canvas.Top="176"><TextBlock.RenderTransform>
+					<CompositeTransform ScaleY="1.33" ScaleX="1.33" TranslateX="27.6" TranslateY="27.6"/>
+				</TextBlock.RenderTransform></TextBlock>
+		</Canvas>
+	</Canvas>
+</UserControl>
