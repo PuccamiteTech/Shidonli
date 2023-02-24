@@ -47,7 +47,7 @@
             // 
             // btnInstall
             // 
-            this.btnInstall.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnInstall.BackColor = System.Drawing.Color.White;
             this.btnInstall.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInstall.Location = new System.Drawing.Point(126, 200);
             this.btnInstall.Name = "btnInstall";
@@ -129,9 +129,9 @@
             // 
             // txtStatus
             // 
-            this.txtStatus.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(228)))), ((int)(((byte)(242)))));
             this.txtStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStatus.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.txtStatus.ForeColor = System.Drawing.Color.Black;
             this.txtStatus.Location = new System.Drawing.Point(196, 269);
             this.txtStatus.Multiline = true;
             this.txtStatus.Name = "txtStatus";
@@ -152,7 +152,7 @@
             // 
             // btnReset
             // 
-            this.btnReset.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnReset.BackColor = System.Drawing.Color.White;
             this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReset.Location = new System.Drawing.Point(277, 200);
             this.btnReset.Name = "btnReset";
@@ -164,7 +164,7 @@
             // 
             // btnQuit
             // 
-            this.btnQuit.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnQuit.BackColor = System.Drawing.Color.White;
             this.btnQuit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnQuit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuit.Location = new System.Drawing.Point(428, 200);
@@ -180,7 +180,7 @@
             this.AcceptButton = this.btnInstall;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnQuit;
             this.ClientSize = new System.Drawing.Size(624, 441);
             this.Controls.Add(this.btnQuit);
@@ -191,6 +191,7 @@
             this.Controls.Add(this.grpVersion);
             this.Controls.Add(this.lblHeading);
             this.Controls.Add(this.btnInstall);
+            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
