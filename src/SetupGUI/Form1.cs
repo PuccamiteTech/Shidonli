@@ -18,6 +18,17 @@ namespace Shidonli
         {
             txtStatus.Text = "Initializing...";
 
+            // Check OS version
+            if (Environment.OSVersion.ToString().Contains("6.0"))
+            {
+                txtStatus.Text += Environment.NewLine + "WARNING: Windows Vista will fail to download the WAMP stack.";
+                txtStatus.Text += Environment.NewLine + "WARNING: During testing, Windows Vista failed to run Apache.";
+            }
+            else if (Environment.OSVersion.ToString().Contains("6.1"))
+            {
+                txtStatus.Text += Environment.NewLine + "WARNING: If TLS 1.2 is disabled, Shidonli may fail on Windows 7.";
+            }
+
             // Restrict to 64-bit OSes
             if (!Environment.Is64BitOperatingSystem)
             {
