@@ -84,100 +84,107 @@ namespace Shidonli
 
         private async void btnInstall_Click(object sender, EventArgs e)
         {
-            string wampLnk = "https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/8.2.0/xampp-windows-x64-8.2.0-0-VS16-installer.exe";
-            string wampExe = @"C:\xampp\xampp-control.exe";
-            string htdocsDir = @"C:\xampp\htdocs";
-            string silverlightDir = @"C:\Program Files\Microsoft Silverlight\5.1.50918.0";
-            string registerFile = htdocsDir + @"\v2\ClientBin\RegisterLib.xap";
-            string hostsFile = @"C:\Windows\System32\drivers\etc\hosts";
-            string ip = "\n127.0.0.1 ";
-            string host = "shidonni.com";
-
-            if (radV1.Checked)
+            try
             {
-                chkRegister.Checked = false;
+                string wampLnk = "https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/8.2.0/xampp-windows-x64-8.2.0-0-VS16-installer.exe";
+                string wampExe = @"C:\xampp\xampp-control.exe";
+                string htdocsDir = @"C:\xampp\htdocs";
+                string silverlightDir = @"C:\Program Files\Microsoft Silverlight\5.1.50918.0";
+                string registerFile = htdocsDir + @"\v2\ClientBin\RegisterLib.xap";
+                string hostsFile = @"C:\Windows\System32\drivers\etc\hosts";
+                string ip = "\n127.0.0.1 ";
+                string host = "shidonni.com";
+
+                if (radV1.Checked)
+                {
+                    chkRegister.Checked = false;
+                }
+
+                btnInstall.Enabled = false;
+                btnReset.Enabled = false;
+                radV1.Enabled = false;
+                radV2.Enabled = false;
+                chkRegister.Enabled = false;
+
+                // Update hosts
+                File.Copy(hostsFile, @"Resources\hosts.bak", true);
+
+                if (!File.ReadAllText(hostsFile).Contains("shidonni"))
+                {
+                    txtStatus.Text += Environment.NewLine + "Adding hosts...";
+                    File.AppendAllText(hostsFile, ip + host + ip + "www." + host + ip + "www2." + host);
+                }
+
+                // Download software
+                if (!File.Exists(@"Resources\xampp.exe"))
+                {
+                    WebClient client = new WebClient();
+                    ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+                    txtStatus.Text += Environment.NewLine + "Downloading WAMP stack...";
+                    await client.DownloadFileTaskAsync(new Uri(wampLnk), @"Resources\xampp.exe");
+                }
+
+                // Install Silverlight
+                if (!Directory.Exists(silverlightDir))
+                {
+                    txtStatus.Text += Environment.NewLine + "Installing Silverlight...";
+                    Process.Start(@"Resources\Silverlight_Developer_x64.exe", "/q /doNotRequireDRMPrompt /noupdate");
+                }
+
+                // Install WAMP (wait until done)
+                if (!File.Exists(wampExe))
+                {
+                    txtStatus.Text += Environment.NewLine + "Installing WAMP stack...";
+                    var process = Process.Start(@"Resources\xampp.exe",
+                    "--mode unattended --unattendedmodeui minimal --disable-components xampp_filezilla," +
+                    "xampp_mercury,xampp_tomcat,xampp_perl,xampp_webalizer,xampp_sendmail");
+                    process.WaitForExit();
+                }
+
+                // Clean htdocs
+                txtStatus.Text += Environment.NewLine + "Deleting old htdocs...";
+                if (Directory.Exists(htdocsDir))
+                {
+                    Directory.Delete(htdocsDir, true);
+                }
+
+                Directory.CreateDirectory(htdocsDir);
+
+                // Fill htdocs
+                if (radV1.Checked)
+                {
+                    txtStatus.Text += Environment.NewLine + "Extracting v1 htdocs...";
+                    ZipFile.ExtractToDirectory(@"Resources\htdocs.v1.zip", htdocsDir);
+                }
+                else
+                {
+                    txtStatus.Text += Environment.NewLine + "Extracting v2 htdocs...";
+                    ZipFile.ExtractToDirectory(@"Resources\htdocs.v2.zip", htdocsDir);
+                }
+
+                // Apply modifications
+                if (chkRegister.Checked && radV2.Checked)
+                {
+                    txtStatus.Text += Environment.NewLine + "Replacing RegisterLib.xap...";
+                    File.Copy(@"Resources\RegisterLib.xap", registerFile, true);
+                }
+
+                txtStatus.Text += Environment.NewLine + "Installation is complete!";
+
+                btnInstall.Enabled = true;
+                btnReset.Enabled = true;
+                radV1.Enabled = true;
+                radV2.Enabled = true;
+                chkRegister.Enabled = true;
+
+                if (File.Exists(wampExe))
+                {
+                    Process.Start(wampExe);
+                }
             }
-
-            btnInstall.Enabled = false;
-            btnReset.Enabled = false;
-            radV1.Enabled = false;
-            radV2.Enabled = false;
-            chkRegister.Enabled = false;
-
-            // Update hosts
-            File.Copy(hostsFile, @"Resources\hosts.bak", true);
-            
-            if (!File.ReadAllText(hostsFile).Contains("shidonni"))
+            catch (Exception err)
             {
-                txtStatus.Text += Environment.NewLine + "Adding hosts...";
-                File.AppendAllText(hostsFile, ip + host + ip + "www." + host + ip + "www2." + host);
-            }
-
-            // Download software
-            if (!File.Exists(@"Resources\xampp.exe"))
-            {
-                WebClient client = new WebClient();
-                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-                txtStatus.Text += Environment.NewLine + "Downloading WAMP stack...";
-                await client.DownloadFileTaskAsync(new Uri(wampLnk), @"Resources\xampp.exe");
-            }
-
-            // Install Silverlight
-            if (!Directory.Exists(silverlightDir))
-            {
-                txtStatus.Text += Environment.NewLine + "Installing Silverlight...";
-                Process.Start(@"Resources\Silverlight_Developer_x64.exe", "/q /doNotRequireDRMPrompt /noupdate");
-            }
-
-            // Install WAMP (wait until done)
-            if (!Directory.Exists(htdocsDir))
-            {
-                txtStatus.Text += Environment.NewLine + "Installing WAMP stack...";
-                var process = Process.Start(@"Resources\xampp.exe",
-                "--mode unattended --unattendedmodeui minimal --disable-components xampp_filezilla," +
-                "xampp_mercury,xampp_tomcat,xampp_perl,xampp_webalizer,xampp_sendmail");
-                process.WaitForExit();
-            }
-
-            // Clean htdocs
-            txtStatus.Text += Environment.NewLine + "Deleting old htdocs...";
-            if (Directory.Exists(htdocsDir))
-            {
-                Directory.Delete(htdocsDir, true);
-            }
-            
-            Directory.CreateDirectory(htdocsDir);
-
-            // Fill htdocs
-            if (radV1.Checked)
-            {
-                txtStatus.Text += Environment.NewLine + "Extracting v1 htdocs...";
-                ZipFile.ExtractToDirectory(@"Resources\htdocs.v1.zip", htdocsDir);
-            }
-            else
-            {
-                txtStatus.Text += Environment.NewLine + "Extracting v2 htdocs...";
-                ZipFile.ExtractToDirectory(@"Resources\htdocs.v2.zip", htdocsDir);
-            }
-
-            // Apply modifications
-            if (chkRegister.Checked && radV2.Checked)
-            {
-                txtStatus.Text += Environment.NewLine + "Replacing RegisterLib.xap...";
-                File.Copy(@"Resources\RegisterLib.xap", registerFile, true);
-            }
-
-            txtStatus.Text += Environment.NewLine + "Installation is complete!";
-
-            btnInstall.Enabled = true;
-            btnReset.Enabled = true;
-            radV1.Enabled = true;
-            radV2.Enabled = true;
-            chkRegister.Enabled = true;
-
-            if (File.Exists(wampExe))
-            {
-                Process.Start(wampExe);
+                txtStatus.Text += Environment.NewLine + "ERROR: " + err.Message;
             }
         }
 
