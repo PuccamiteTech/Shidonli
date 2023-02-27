@@ -116,7 +116,7 @@ namespace Shidonli
                 }
 
                 // Download software
-                if (!File.Exists(@"Resources\xampp.exe"))
+                if (!File.Exists(@"Resources\xampp.exe") || chkFresh.Checked)
                 {
                     WebClient client = new WebClient();
                     ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
@@ -125,14 +125,14 @@ namespace Shidonli
                 }
 
                 // Install Silverlight
-                if (!Directory.Exists(silverlightDir))
+                if (!Directory.Exists(silverlightDir) || chkFresh.Checked)
                 {
                     txtStatus.Text += Environment.NewLine + "Installing Silverlight...";
                     Process.Start(@"Resources\Silverlight_Developer_x64.exe", "/q /doNotRequireDRMPrompt /noupdate");
                 }
 
                 // Install WAMP (wait until done)
-                if (!File.Exists(wampExe))
+                if (!File.Exists(wampExe) || chkFresh.Checked)
                 {
                     txtStatus.Text += Environment.NewLine + "Installing WAMP stack...";
                     var process = Process.Start(@"Resources\xampp.exe",

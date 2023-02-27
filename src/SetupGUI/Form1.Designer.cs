@@ -40,6 +40,7 @@
             this.picAnimal = new System.Windows.Forms.PictureBox();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnQuit = new System.Windows.Forms.Button();
+            this.chkFresh = new System.Windows.Forms.CheckBox();
             this.grpVersion.SuspendLayout();
             this.grpModifications.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAnimal)).BeginInit();
@@ -105,6 +106,7 @@
             // 
             // grpModifications
             // 
+            this.grpModifications.Controls.Add(this.chkFresh);
             this.grpModifications.Controls.Add(this.chkRegister);
             this.grpModifications.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpModifications.Location = new System.Drawing.Point(334, 74);
@@ -120,7 +122,7 @@
             this.chkRegister.Checked = true;
             this.chkRegister.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkRegister.Location = new System.Drawing.Point(6, 23);
+            this.chkRegister.Location = new System.Drawing.Point(6, 20);
             this.chkRegister.Name = "chkRegister";
             this.chkRegister.Size = new System.Drawing.Size(143, 20);
             this.chkRegister.TabIndex = 2;
@@ -175,6 +177,17 @@
             this.btnQuit.UseVisualStyleBackColor = false;
             this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
             // 
+            // chkFresh
+            // 
+            this.chkFresh.AutoSize = true;
+            this.chkFresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkFresh.Location = new System.Drawing.Point(6, 43);
+            this.chkFresh.Name = "chkFresh";
+            this.chkFresh.Size = new System.Drawing.Size(98, 20);
+            this.chkFresh.TabIndex = 3;
+            this.chkFresh.Text = "Fresh Setup";
+            this.chkFresh.UseVisualStyleBackColor = true;
+            // 
             // frmSetup
             // 
             this.AcceptButton = this.btnInstall;
@@ -221,6 +234,7 @@
         private System.Windows.Forms.PictureBox picAnimal;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnQuit;
+        private System.Windows.Forms.CheckBox chkFresh;
     }
 }
 
