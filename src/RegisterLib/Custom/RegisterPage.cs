@@ -325,6 +325,8 @@ namespace RegisterLib
 
             if (this._animal.Name.ToUpper().StartsWith("GAME"))
             {
+                Global.CurrentAffiliate = "KA2";
+
                 if (this._animal.Name.Contains("01"))
                 {
                     OpenGame(EnumGameType.BEJEWELED);
