@@ -29,15 +29,20 @@ namespace Shidonli
                 txtStatus.Text += Environment.NewLine + "WARNING: If TLS 1.2 is disabled, Shidonli may fail on Windows 7.";
             }
 
+            // Discourage Tampering
+            if (!File.Exists("Shidonli.exe.config"))
+            {
+                txtStatus.Text += Environment.NewLine + "WARNING: The app may misbehave without its intended config.";
+            }
+
             // Restrict to 64-bit OSes
             if (!Environment.Is64BitOperatingSystem)
             {
                 txtStatus.Text += Environment.NewLine + "This tool is not for 32-bit systems!";
                 btnInstall.Enabled = false;
                 btnReset.Enabled = false;
-                radV1.Enabled = false;
-                radV2.Enabled = false;
-                chkRegister.Enabled = false;
+                grpVersion.Enabled = false;
+                grpModifications.Enabled = false;
             }
 
             // Check for supplementary files
@@ -102,9 +107,8 @@ namespace Shidonli
 
                 btnInstall.Enabled = false;
                 btnReset.Enabled = false;
-                radV1.Enabled = false;
-                radV2.Enabled = false;
-                chkRegister.Enabled = false;
+                grpVersion.Enabled = false;
+                grpModifications.Enabled = false;
 
                 // Update hosts
                 File.Copy(hostsFile, @"Resources\hosts.bak", true);
@@ -173,9 +177,8 @@ namespace Shidonli
 
                 btnInstall.Enabled = true;
                 btnReset.Enabled = true;
-                radV1.Enabled = true;
-                radV2.Enabled = true;
-                chkRegister.Enabled = true;
+                grpVersion.Enabled = true;
+                grpModifications.Enabled = true;
 
                 if (File.Exists(wampExe))
                 {
@@ -194,6 +197,7 @@ namespace Shidonli
             radV1.Checked = false;
             radV2.Checked = true;
             chkRegister.Checked = true;
+            chkFresh.Checked = false;
         }
 
         private void btnQuit_Click(object sender, EventArgs e)
