@@ -91,7 +91,7 @@ namespace Shidonli
         {
             try
             {
-                string wampLnk = "https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/8.2.0/xampp-windows-x64-8.2.0-0-VS16-installer.exe";
+                string wampLnk = "https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/8.2.4/xampp-windows-x64-8.2.4-0-VS16-installer.exe";
                 string wampExe = @"C:\xampp\xampp-control.exe";
                 string htdocsDir = @"C:\xampp\htdocs";
                 string silverlightDir = @"C:\Program Files\Microsoft Silverlight\5.1.50918.0";
