@@ -222,11 +222,7 @@ namespace RegisterLib
 		{
 			try
 			{
-                if (this._animal.Name.ToUpper() == "STAGEPASS")
-                {
-                    this.GoToStage3();
-                }
-				if (!e.Result)
+				if (this._animal.Name.ToUpper() == "STAGEPASS" || !e.Result)
 				{
 					this.GoToStage3();
 				}
@@ -325,8 +321,6 @@ namespace RegisterLib
 
             if (this._animal.Name.ToUpper().StartsWith("GAME"))
             {
-                Global.CurrentAffiliate = "KA2";
-
                 if (this._animal.Name.Contains("01"))
                 {
                     OpenGame(EnumGameType.BEJEWELED);
@@ -441,6 +435,32 @@ namespace RegisterLib
                 {
                     OpenGame(EnumGameType.XONIX);
                 }
+            }
+            else if (this._animal.Name.ToUpper().StartsWith("CAFF"))
+            {
+                if (this._animal.Name.Contains("01"))
+                {
+                    Global.CurrentAffiliate = String.Empty;
+                }
+                else if (this._animal.Name.Contains("02"))
+                {
+                    Global.CurrentAffiliate = "KA2";
+                }
+            }
+            
+            if (this._animal.Name.ToUpper().Contains("GLOW"))
+            {
+                this._animal.DoGlow();
+            }
+            
+            if (this._animal.Name.ToUpper().Contains("POOF"))
+            {
+                this._animal.DoMagic();
+            }
+            
+            if (this._animal.Name.ToUpper().Contains("DUPE"))
+            {
+                this._world.Add(this._animal.Clone());
             }
 		}
 

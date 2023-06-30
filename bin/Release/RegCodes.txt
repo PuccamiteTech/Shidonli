@@ -1,0 +1,34 @@
+Replace animal names with the below codes to unlock functionality.
+
+STAGEPASS = See more registration stages.
+
+CAFF01 = Hide game previews, if visible.
+CAFF02 = Show game previews.
+
+GLOW = Make your animal glow.
+POOF = Give your animal magic ink.
+DUPE = Clone your current drawing.
+
+GAME01 = BEJEWLED
+GAME02 = BREAK_OUT
+GAME03 = BRICKS
+GAME04 = BUBBLE_SHOOTER
+GAME05 = CONNECT_FOUR
+GAME06 = CRAZY_TAXI
+GAME07 = EGG_CATCHER
+GAME08 = GOBLINS
+GAME09 = GOBLINS_1
+GAME10 = HIVE
+GAME11 = ISLAND
+GAME12 = MEMORY
+GAME13 = PIXOS
+GAME14 = PUZZLE
+GAME15 = QUEST
+GAME16 = RESTAURANT
+GAME17 = ROPES_AND_LADDERS
+GAME18 = SEA_GUARD
+GAME19 = SIMON
+GAME20 = SNAKE
+GAME21 = SPACE
+GAME22 = TRAFFIC_JAM
+GAME23 = XONIX

@@ -116,6 +116,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="pencil.ico" />
+    <None Include="RegCodes.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Resources\Silverlight_Developer_x64.exe">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
