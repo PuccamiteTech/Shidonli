@@ -20,6 +20,7 @@ using ShidonniSCCommon.Utils;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
 using System.Windows;
@@ -80,6 +81,8 @@ namespace RegisterLib
 		private string _mailService;
 
 		private bool _agreeChecked;
+
+        private bool _doAttemptLoad;
 
 		private string _oldNewPostfix = "";
 
@@ -319,150 +322,190 @@ namespace RegisterLib
 			this._editFrameControl = null;
 			this.PlayWorld = true;
 
-            if (this._animal.Name.ToUpper().StartsWith("GAME"))
+            ParseCheats();
+		}
+
+        private void ParseCheats()
+        {
+            string name = this._animal.Name.ToUpper();
+
+            if (name.StartsWith("GAME"))
             {
-                if (this._animal.Name.Contains("01"))
+                if (name.Contains("01"))
                 {
                     OpenGame(EnumGameType.BEJEWELED);
                 }
-
-                else if (this._animal.Name.Contains("02"))
+                else if (name.Contains("02"))
                 {
                     OpenGame(EnumGameType.BREAK_OUT);
                 }
-
-                else if (this._animal.Name.Contains("03"))
+                else if (name.Contains("03"))
                 {
                     OpenGame(EnumGameType.BRICKS);
                 }
-
-                else if (this._animal.Name.Contains("04"))
+                else if (name.Contains("04"))
                 {
                     OpenGame(EnumGameType.BUBBLE_SHOOTER);
                 }
-
-                else if (this._animal.Name.Contains("05"))
+                else if (name.Contains("05"))
                 {
                     OpenGame(EnumGameType.CONNECT_FOUR);
                 }
-
-                else if (this._animal.Name.Contains("06"))
+                else if (name.Contains("06"))
                 {
                     OpenGame(EnumGameType.CRAZY_TAXI);
                 }
-
-                else if (this._animal.Name.Contains("07"))
+                else if (name.Contains("07"))
                 {
                     OpenGame(EnumGameType.EGG_CATCHER);
                 }
-
-                else if (this._animal.Name.Contains("08"))
+                else if (name.Contains("08"))
                 {
                     OpenGame(EnumGameType.GOBLINS);
                 }
-
-                else if (this._animal.Name.Contains("09"))
+                else if (name.Contains("09"))
                 {
                     OpenGame(EnumGameType.GOBLINS_1);
                 }
-
-                else if (this._animal.Name.Contains("10"))
+                else if (name.Contains("10"))
                 {
                     OpenGame(EnumGameType.HIVE);
                 }
-
-                else if (this._animal.Name.Contains("11"))
+                else if (name.Contains("11"))
                 {
                     OpenGame(EnumGameType.ISLAND);
                 }
-
-                else if (this._animal.Name.Contains("12"))
+                else if (name.Contains("12"))
                 {
                     OpenGame(EnumGameType.MEMORY);
                 }
-
-                else if (this._animal.Name.Contains("13"))
+                else if (name.Contains("13"))
                 {
                     OpenGame(EnumGameType.PIXOS);
                 }
-
-                else if (this._animal.Name.Contains("14"))
+                else if (name.Contains("14"))
                 {
                     OpenGame(EnumGameType.PUZZLE);
                 }
-
-                else if (this._animal.Name.Contains("15"))
+                else if (name.Contains("15"))
                 {
                     OpenGame(EnumGameType.QUEST);
                 }
-
-                else if (this._animal.Name.Contains("16"))
+                else if (name.Contains("16"))
                 {
                     OpenGame(EnumGameType.RESTAURANT);
                 }
-
-                else if (this._animal.Name.Contains("17"))
+                else if (name.Contains("17"))
                 {
                     OpenGame(EnumGameType.ROPES_AND_LADDERS);
                 }
-
-                else if (this._animal.Name.Contains("18"))
+                else if (name.Contains("18"))
                 {
                     OpenGame(EnumGameType.SEA_GUARD);
                 }
-
-                else if (this._animal.Name.Contains("19"))
+                else if (name.Contains("19"))
                 {
                     OpenGame(EnumGameType.SIMON);
                 }
-
-                else if (this._animal.Name.Contains("20"))
+                else if (name.Contains("20"))
                 {
                     OpenGame(EnumGameType.SNAKE);
                 }
-
-                else if (this._animal.Name.Contains("21"))
+                else if (name.Contains("21"))
                 {
                     OpenGame(EnumGameType.SPACE);
                 }
-
-                else if (this._animal.Name.Contains("22"))
+                else if (name.Contains("22"))
                 {
                     OpenGame(EnumGameType.TRAFFIC_JAM);
                 }
-
-                else if (this._animal.Name.Contains("23"))
+                else if (name.Contains("23"))
                 {
                     OpenGame(EnumGameType.XONIX);
                 }
             }
-            else if (this._animal.Name.ToUpper().StartsWith("CAFF"))
+            else if (name.StartsWith("CAFF"))
             {
-                if (this._animal.Name.Contains("01"))
+                if (name.Contains("01"))
                 {
                     Global.CurrentAffiliate = String.Empty;
                 }
-                else if (this._animal.Name.Contains("02"))
+                else if (name.Contains("02"))
                 {
                     Global.CurrentAffiliate = "KA2";
                 }
             }
-            
-            if (this._animal.Name.ToUpper().Contains("GLOW"))
+
+            if (name.Contains("SAVE"))
+            {
+                SavePolylines();
+            }
+
+            if (name.Contains("LOAD"))
+            {
+                _doAttemptLoad = true;
+                Alert("Enter the design's data in the username field, then press next.");
+            }
+            else
+            {
+                _doAttemptLoad = false;
+            }
+
+            if (name.Contains("GLOW"))
             {
                 this._animal.DoGlow();
             }
-            
-            if (this._animal.Name.ToUpper().Contains("POOF"))
+
+            if (name.Contains("POOF"))
             {
                 this._animal.DoMagic();
             }
-            
-            if (this._animal.Name.ToUpper().Contains("DUPE"))
+
+            if (name.Contains("DUPE"))
             {
                 this._world.Add(this._animal.Clone());
             }
-		}
+        }
+
+        private void SavePolylines()
+        {
+            using (MemoryStream memoryStream = new MemoryStream())
+            {
+                using (BinaryWriter writer = new BinaryWriter(memoryStream))
+                {
+                    this._polylines.Write(writer);
+                    writer.Flush();
+                    this._animal.Name = Convert.ToBase64String(memoryStream.ToArray());
+                    Alert("Go back, and copy the animal's name to save the design.");
+                }
+            }
+        }
+
+        private void LoadPolyLines(string base64)
+        {
+            this._polylines.Clear();
+
+            if (base64.Length == 0 || base64.Contains(" ") || base64.Length % 4 != 0)
+            {
+                Alert("The design's data is invalid.");
+                return;
+            }
+
+            using (MemoryStream memoryStream = new MemoryStream(Convert.FromBase64String(base64)))
+            {
+                using (BinaryReader reader = new BinaryReader(memoryStream))
+                {
+                    if (this._polylines.Read(reader))
+                    {
+                        Alert("The design's data loaded. Go back.");
+                    }
+                    else
+                    {
+                        Alert("The design's data failed to load.");
+                    }
+                }
+            }
+        }
 
 		private void _timer_Tick(object sender, EventArgs e)
 		{
@@ -866,10 +909,15 @@ namespace RegisterLib
 						this.GoToStage3();
 						return;
 					}
+                    if (_doAttemptLoad)
+                    {
+                        LoadPolyLines(this._name.Trim());
+                    }
 					if (!this.ValidateUsernameAndPassword())
 					{
 						break;
 					}
+
 					this.CheckUserNameExists();
 					return;
 				}
