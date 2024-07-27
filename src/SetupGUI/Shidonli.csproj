@@ -107,6 +107,9 @@
     <None Include="Resources\htdocs.v2.zip">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Resources\httpd-vhosts.conf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Resources\RegisterLib.xap">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
