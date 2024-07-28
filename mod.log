@@ -1,5 +1,15 @@
 htdocs.v1.zip:
-Modified "index.html"
+Fixed "index.html" redirect
+Added "s/pages/WinSealSmallWEB.gif"
+Fixed "default.htm" links (Mom's Best Award / Giraffe)
+Added alt text for missing images onto "default.htm" and "s/default.htm"
+fixed "s/pages/toys.html" links (www2 -> www)
+Added "s/ClientBin/ShidonniSite1.xap"
+Added "s/servers.xml"
+Added "s/images2/bge.png"
+Added "s/lang/ENGLISH_RC/controls.xml
+Added "s/movies/IntroRus.wmv"
+Derived "s/movies/Intro2.wmv" from "s/movies/IntroRus.wmv" (placeholder)
 
 htdocs.v2.zip:
 Added "v2\SL_Resources\audio\effects\camera.wma"
@@ -12,3 +22,6 @@ Added "v2\SL_Resources\audio\ladders.wma"
 Added "v2\SL_Resources\audio\effects\game_over_no_presents.wma"
 Added "v2\SL_Resources\audio\effects\you_won.wma"
 Added "v2\ClientBin\CrazyTaxiGameLib.xap"
+
+The files added may not reflect the files available, as each file is added after testing.
+If you have trouble, switch to English for the latest fixes.
