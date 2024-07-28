@@ -32,15 +32,15 @@
             this.btnInstall = new System.Windows.Forms.Button();
             this.lblHeading = new System.Windows.Forms.Label();
             this.grpVersion = new System.Windows.Forms.GroupBox();
-            this.radV2 = new System.Windows.Forms.RadioButton();
-            this.radV1 = new System.Windows.Forms.RadioButton();
+            this.chkV2 = new System.Windows.Forms.CheckBox();
+            this.chkV1 = new System.Windows.Forms.CheckBox();
             this.grpModifications = new System.Windows.Forms.GroupBox();
+            this.chkFresh = new System.Windows.Forms.CheckBox();
             this.chkRegister = new System.Windows.Forms.CheckBox();
             this.txtStatus = new System.Windows.Forms.TextBox();
             this.picAnimal = new System.Windows.Forms.PictureBox();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnQuit = new System.Windows.Forms.Button();
-            this.chkFresh = new System.Windows.Forms.CheckBox();
             this.grpVersion.SuspendLayout();
             this.grpModifications.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAnimal)).BeginInit();
@@ -70,39 +70,41 @@
             // 
             // grpVersion
             // 
-            this.grpVersion.Controls.Add(this.radV2);
-            this.grpVersion.Controls.Add(this.radV1);
+            this.grpVersion.Controls.Add(this.chkV2);
+            this.grpVersion.Controls.Add(this.chkV1);
             this.grpVersion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpVersion.Location = new System.Drawing.Point(126, 74);
             this.grpVersion.Name = "grpVersion";
             this.grpVersion.Size = new System.Drawing.Size(170, 90);
             this.grpVersion.TabIndex = 2;
             this.grpVersion.TabStop = false;
-            this.grpVersion.Text = "Game Version";
+            this.grpVersion.Text = "Game Versions";
             // 
-            // radV2
+            // chkV2
             // 
-            this.radV2.AutoSize = true;
-            this.radV2.Checked = true;
-            this.radV2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radV2.Location = new System.Drawing.Point(7, 43);
-            this.radV2.Name = "radV2";
-            this.radV2.Size = new System.Drawing.Size(110, 20);
-            this.radV2.TabIndex = 1;
-            this.radV2.TabStop = true;
-            this.radV2.Text = "v2 (2010-2015)";
-            this.radV2.UseVisualStyleBackColor = true;
+            this.chkV2.AutoSize = true;
+            this.chkV2.Checked = true;
+            this.chkV2.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkV2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkV2.Location = new System.Drawing.Point(7, 43);
+            this.chkV2.Name = "chkV2";
+            this.chkV2.Size = new System.Drawing.Size(114, 20);
+            this.chkV2.TabIndex = 4;
+            this.chkV2.Text = "V2 (2010-2015)";
+            this.chkV2.UseVisualStyleBackColor = true;
             // 
-            // radV1
+            // chkV1
             // 
-            this.radV1.AutoSize = true;
-            this.radV1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radV1.Location = new System.Drawing.Point(7, 20);
-            this.radV1.Name = "radV1";
-            this.radV1.Size = new System.Drawing.Size(110, 20);
-            this.radV1.TabIndex = 0;
-            this.radV1.Text = "v1 (2008-2010)";
-            this.radV1.UseVisualStyleBackColor = true;
+            this.chkV1.AutoSize = true;
+            this.chkV1.Checked = true;
+            this.chkV1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkV1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkV1.Location = new System.Drawing.Point(7, 21);
+            this.chkV1.Name = "chkV1";
+            this.chkV1.Size = new System.Drawing.Size(114, 20);
+            this.chkV1.TabIndex = 4;
+            this.chkV1.Text = "V1 (2008-2010)";
+            this.chkV1.UseVisualStyleBackColor = true;
             // 
             // grpModifications
             // 
@@ -116,6 +118,17 @@
             this.grpModifications.TabStop = false;
             this.grpModifications.Text = "Modifications";
             // 
+            // chkFresh
+            // 
+            this.chkFresh.AutoSize = true;
+            this.chkFresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkFresh.Location = new System.Drawing.Point(6, 43);
+            this.chkFresh.Name = "chkFresh";
+            this.chkFresh.Size = new System.Drawing.Size(99, 20);
+            this.chkFresh.TabIndex = 3;
+            this.chkFresh.Text = "Fresh Setup";
+            this.chkFresh.UseVisualStyleBackColor = true;
+            // 
             // chkRegister
             // 
             this.chkRegister.AutoSize = true;
@@ -124,7 +137,7 @@
             this.chkRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkRegister.Location = new System.Drawing.Point(6, 20);
             this.chkRegister.Name = "chkRegister";
-            this.chkRegister.Size = new System.Drawing.Size(143, 20);
+            this.chkRegister.Size = new System.Drawing.Size(144, 20);
             this.chkRegister.TabIndex = 2;
             this.chkRegister.Text = "Custom RegisterLib";
             this.chkRegister.UseVisualStyleBackColor = true;
@@ -177,17 +190,6 @@
             this.btnQuit.UseVisualStyleBackColor = false;
             this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
             // 
-            // chkFresh
-            // 
-            this.chkFresh.AutoSize = true;
-            this.chkFresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkFresh.Location = new System.Drawing.Point(6, 43);
-            this.chkFresh.Name = "chkFresh";
-            this.chkFresh.Size = new System.Drawing.Size(98, 20);
-            this.chkFresh.TabIndex = 3;
-            this.chkFresh.Text = "Fresh Setup";
-            this.chkFresh.UseVisualStyleBackColor = true;
-            // 
             // frmSetup
             // 
             this.AcceptButton = this.btnInstall;
@@ -226,8 +228,6 @@
         private System.Windows.Forms.Button btnInstall;
         private System.Windows.Forms.Label lblHeading;
         private System.Windows.Forms.GroupBox grpVersion;
-        private System.Windows.Forms.RadioButton radV2;
-        private System.Windows.Forms.RadioButton radV1;
         private System.Windows.Forms.GroupBox grpModifications;
         private System.Windows.Forms.CheckBox chkRegister;
         private System.Windows.Forms.TextBox txtStatus;
@@ -235,6 +235,8 @@
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnQuit;
         private System.Windows.Forms.CheckBox chkFresh;
+        private System.Windows.Forms.CheckBox chkV2;
+        private System.Windows.Forms.CheckBox chkV1;
     }
 }
 

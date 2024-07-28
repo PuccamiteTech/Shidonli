@@ -9,6 +9,9 @@ GLOW = Make your animal glow.
 POOF = Give your animal magic ink.
 DUPE = Clone your current drawing.
 
+LOAD = Load a design from a base64-encoded string.
+SAVE = Save a design to a base64-encoded string.
+
 GAME01 = BEJEWLED
 GAME02 = BREAK_OUT
 GAME03 = BRICKS

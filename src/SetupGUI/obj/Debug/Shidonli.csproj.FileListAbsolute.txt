@@ -1,1 +1,14 @@
 D:\Users\Steven\OneDrive\Documents\GitHub\Shidonli\src\SetupGUI\bin\Debug\Shidonli.exe.config
+D:\Users\Steven\OneDrive\Documents\GitHub\Shidonli\src\SetupGUI\bin\Debug\Resources\htdocs.v1.zip
+D:\Users\Steven\OneDrive\Documents\GitHub\Shidonli\src\SetupGUI\bin\Debug\Resources\htdocs.v2.zip
+D:\Users\Steven\OneDrive\Documents\GitHub\Shidonli\src\SetupGUI\bin\Debug\Resources\httpd-vhosts.conf
+D:\Users\Steven\OneDrive\Documents\GitHub\Shidonli\src\SetupGUI\bin\Debug\Resources\RegisterLib.xap
+D:\Users\Steven\OneDrive\Documents\GitHub\Shidonli\src\SetupGUI\bin\Debug\RegCodes.txt
+D:\Users\Steven\OneDrive\Documents\GitHub\Shidonli\src\SetupGUI\bin\Debug\Resources\Silverlight_Developer_x64.exe
+D:\Users\Steven\OneDrive\Documents\GitHub\Shidonli\src\SetupGUI\bin\Debug\Shidonli.exe
+D:\Users\Steven\OneDrive\Documents\GitHub\Shidonli\src\SetupGUI\bin\Debug\Shidonli.pdb
+D:\Users\Steven\OneDrive\Documents\GitHub\Shidonli\src\SetupGUI\obj\Debug\Shidonli.frmSetup.resources
+D:\Users\Steven\OneDrive\Documents\GitHub\Shidonli\src\SetupGUI\obj\Debug\Shidonli.Properties.Resources.resources
+D:\Users\Steven\OneDrive\Documents\GitHub\Shidonli\src\SetupGUI\obj\Debug\Shidonli.csproj.GenerateResource.Cache
+D:\Users\Steven\OneDrive\Documents\GitHub\Shidonli\src\SetupGUI\obj\Debug\Shidonli.exe
+D:\Users\Steven\OneDrive\Documents\GitHub\Shidonli\src\SetupGUI\obj\Debug\Shidonli.pdb
