@@ -444,7 +444,7 @@ namespace RegisterLib
             if (name.Contains("LOAD"))
             {
                 _doAttemptLoad = true;
-                Alert("Enter the design's data in the username field, then press next.");
+                Alert("Enter the design's data in the user name field, then press next.");
             }
             else
             {
