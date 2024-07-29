@@ -1,7 +1,7 @@
 htdocs.v1.zip:
 Fixed "index.html" redirect
 Added "s/pages/WinSealSmallWEB.gif"
-Fixed "default.htm" links (Mom's Best Award / Giraffe)
+Fixed "default.htm" links (Mom's Best Award / giraffe)
 Added alt text for missing images onto "default.htm" and "s/default.htm"
 fixed "s/pages/toys.html" links (www2 -> www)
 Added "s/ClientBin/ShidonniSite1.xap"
@@ -12,16 +12,26 @@ Added "s/movies/IntroRus.wmv"
 Derived "s/movies/Intro2.wmv" from "s/movies/IntroRus.wmv" (placeholder)
 
 htdocs.v2.zip:
-Added "v2\SL_Resources\audio\effects\camera.wma"
-Added "v2\ClientBin\Tv1Lib.xap"
+Added "v2/SL_Resources/audio/effects/camera.wma"
+Added "v2/ClientBin/Tv1Lib.xap"
 Added "clientaccesspolicy.xml"
 Added "crossdomain.xml"
-Added "v2\ClientBin\QuestGameLib.xap"
-Added "v2\ClientBin\RopesAndLaddersGameLib.xap"
-Added "v2\SL_Resources\audio\ladders.wma"
-Added "v2\SL_Resources\audio\effects\game_over_no_presents.wma"
-Added "v2\SL_Resources\audio\effects\you_won.wma"
-Added "v2\ClientBin\CrazyTaxiGameLib.xap"
+Added "v2/ClientBin/QuestGameLib.xap"
+Added "v2/ClientBin/RopesAndLaddersGameLib.xap"
+Added "v2/SL_Resources/audio/ladders.wma"
+Added "v2/SL_Resources/audio/effects/game_over_no_presents.wma"
+Added "v2/SL_Resources/audio/effects/you_won.wma"
+Added "v2/ClientBin/CrazyTaxiGameLib.xap"
+Renamed "v2/Payments/ProPayment1.aspx%3flang%3dEnglish" to "ProPayment1.aspx"
+Renamed "v2/pages/ParentsTop.aspx%3flang%3dEnglish" to "ParentsTop.aspx"
+Renamed "v2/pages/Mailer.aspx%3flang%3dEnglish%26to%3d3%26subject%3dContactUs" to "Mailer.aspx"
+Renamed "v2/pages/Help.aspx%3faf%3dktantanim" to "Help.aspx"
+Renamed "v2/pages/AboutUs.aspx%3flang%3dEnglish" to "AboutUs.aspx"
+Renamed "v2/pages/TermsOfUse.aspx%3flang%3dEnglish" to "TermsOfUse.aspx"
+Renamed "v2/pages/PrivacyPolicy.aspx%3flang%3dEnglish" to "PrivacyPolicy.aspx"
+Renamed "v2/pages/CoolLinks.aspx%3flang%3dEnglish" to "CoolLinks.aspx"
+Renamed "v2/pages/AccountActivated.aspx%3f" to "AccountActivated.aspx"
+Fixed language display on "v2/LandingPage.aspx" and "v2/MainPage.aspx"
 
 The files added may not reflect the files available, as each file is added after testing.
 If you have trouble, switch to English for the latest fixes.
