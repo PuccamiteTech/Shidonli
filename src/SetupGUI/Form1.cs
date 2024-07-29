@@ -41,7 +41,7 @@ namespace Shidonli
                 txtStatus.Text += Environment.NewLine + "This tool is not for 32-bit systems!";
                 btnInstall.Enabled = false;
                 btnReset.Enabled = false;
-                grpVersion.Enabled = false;
+                grpVersions.Enabled = false;
                 grpModifications.Enabled = false;
             }
 
@@ -95,44 +95,46 @@ namespace Shidonli
 
         private async void btnInstall_Click(object sender, EventArgs e)
         {
+            string wampLnk = "https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/8.2.12/xampp-windows-x64-8.2.12-0-VS16-installer.exe";
+            string wampExe = @"C:\xampp\xampp-control.exe";
+            string htdocsDir = @"C:\xampp\htdocs";
+            string shidonniDir = htdocsDir + @"\shidonni";
+            string silverlightDir = @"C:\Program Files\Microsoft Silverlight\5.1.50918.0";
+            string registerFile = shidonniDir + @"\islands\v2\ClientBin\RegisterLib.xap";
+            string hostsFile = @"C:\Windows\System32\drivers\etc\hosts";
+            string vhostsfile = @"C:\xampp\apache\conf\extra\httpd-vhosts.conf";
+            string ip = "\n127.0.0.1 ";
+            string host = "shidonni.com";
+            bool doFullClean = !Directory.Exists(htdocsDir);
+
             try
             {
-                string wampLnk = "https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/8.2.12/xampp-windows-x64-8.2.12-0-VS16-installer.exe";
-                string wampExe = @"C:\xampp\xampp-control.exe";
-                string shidonniDir = @"C:\xampp\htdocs\shidonni";
-                string silverlightDir = @"C:\Program Files\Microsoft Silverlight\5.1.50918.0";
-                string registerFile = shidonniDir + @"\islands\v2\ClientBin\RegisterLib.xap";
-                string hostsFile = @"C:\Windows\System32\drivers\etc\hosts";
-                string vhostsfile = @"C:\xampp\apache\conf\extra\httpd-vhosts.conf";
-                string ip = "\n127.0.0.1 ";
-                string host = "shidonni.com";
+                // Freeze controls
+                btnInstall.Enabled = false;
+                btnReset.Enabled = false;
+                grpVersions.Enabled = false;
+                grpModifications.Enabled = false;
 
+                // Uncheck invalid modifications
                 if (!chkV2.Checked)
                 {
                     chkRegister.Checked = false;
                 }
 
-                btnInstall.Enabled = false;
-                btnReset.Enabled = false;
-                grpVersion.Enabled = false;
-                grpModifications.Enabled = false;
-
                 // Update hosts
-                File.Copy(hostsFile, @"Resources\hosts.bak", true);
-
                 if (!File.ReadAllText(hostsFile).Contains("shidonni"))
                 {
                     txtStatus.Text += Environment.NewLine + "Adding hosts...";
+                    File.Copy(hostsFile, @"Resources\hosts.bak", true);
                     File.AppendAllText(hostsFile, ip + host + ip + "www." + host + ip + "www2." + host);
                 }
 
                 // Download software
                 if (!File.Exists(wampExe) && !File.Exists(@"Resources\xampp.exe") || chkFresh.Checked)
                 {
-                    WebClient client = new WebClient();
                     ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
                     txtStatus.Text += Environment.NewLine + "Downloading WAMP stack...";
-                    await client.DownloadFileTaskAsync(new Uri(wampLnk), @"Resources\xampp.exe");
+                    await new WebClient().DownloadFileTaskAsync(new Uri(wampLnk), @"Resources\xampp.exe");
                 }
 
                 // Install Silverlight
@@ -146,10 +148,9 @@ namespace Shidonli
                 if (!File.Exists(wampExe) || chkFresh.Checked)
                 {
                     txtStatus.Text += Environment.NewLine + "Installing WAMP stack...";
-                    Process process = Process.Start(@"Resources\xampp.exe",
+                    Process.Start(@"Resources\xampp.exe",
                     "--mode unattended --unattendedmodeui minimal --disable-components xampp_filezilla," +
-                    "xampp_mercury,xampp_tomcat,xampp_perl,xampp_webalizer,xampp_sendmail");
-                    process.WaitForExit();
+                    "xampp_mercury,xampp_tomcat,xampp_perl,xampp_webalizer,xampp_sendmail").WaitForExit();
                 }
 
                 // Replace vhosts
@@ -157,7 +158,13 @@ namespace Shidonli
                 File.Copy(@"Resources\httpd-vhosts.conf", vhostsfile, true);
 
                 // Clean htdocs                
-                if (Directory.Exists(shidonniDir))
+                if (doFullClean)
+                {
+                    txtStatus.Text += Environment.NewLine + "Preparing htdocs directory...";
+                    Directory.Delete(htdocsDir, true);
+                    Directory.CreateDirectory(htdocsDir);
+                }
+                else if (Directory.Exists(shidonniDir))
                 {
                     txtStatus.Text += Environment.NewLine + "Deleting old htdocs...";
                     Directory.Delete(shidonniDir, true);
@@ -190,7 +197,7 @@ namespace Shidonli
                 // Reset controls
                 btnInstall.Enabled = true;
                 btnReset.Enabled = true;
-                grpVersion.Enabled = true;
+                grpVersions.Enabled = true;
                 grpModifications.Enabled = true;
 
                 if (File.Exists(wampExe))
@@ -207,7 +214,7 @@ namespace Shidonli
         private void btnReset_Click(object sender, EventArgs e)
         {
             txtStatus.Text = "Resetting selections...";
-            chkV1.Checked = false;
+            chkV1.Checked = true;
             chkV2.Checked = true;
             chkRegister.Checked = true;
             chkFresh.Checked = false;

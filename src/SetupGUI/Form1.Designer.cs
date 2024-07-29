@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSetup));
             this.btnInstall = new System.Windows.Forms.Button();
             this.lblHeading = new System.Windows.Forms.Label();
-            this.grpVersion = new System.Windows.Forms.GroupBox();
+            this.grpVersions = new System.Windows.Forms.GroupBox();
             this.chkV2 = new System.Windows.Forms.CheckBox();
             this.chkV1 = new System.Windows.Forms.CheckBox();
             this.grpModifications = new System.Windows.Forms.GroupBox();
@@ -41,7 +41,7 @@
             this.picAnimal = new System.Windows.Forms.PictureBox();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnQuit = new System.Windows.Forms.Button();
-            this.grpVersion.SuspendLayout();
+            this.grpVersions.SuspendLayout();
             this.grpModifications.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAnimal)).BeginInit();
             this.SuspendLayout();
@@ -68,17 +68,17 @@
             this.lblHeading.TabIndex = 1;
             this.lblHeading.Text = "Local Shidonni Server AutoTool";
             // 
-            // grpVersion
+            // grpVersions
             // 
-            this.grpVersion.Controls.Add(this.chkV2);
-            this.grpVersion.Controls.Add(this.chkV1);
-            this.grpVersion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpVersion.Location = new System.Drawing.Point(126, 74);
-            this.grpVersion.Name = "grpVersion";
-            this.grpVersion.Size = new System.Drawing.Size(170, 90);
-            this.grpVersion.TabIndex = 2;
-            this.grpVersion.TabStop = false;
-            this.grpVersion.Text = "Game Versions";
+            this.grpVersions.Controls.Add(this.chkV2);
+            this.grpVersions.Controls.Add(this.chkV1);
+            this.grpVersions.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpVersions.Location = new System.Drawing.Point(126, 74);
+            this.grpVersions.Name = "grpVersions";
+            this.grpVersions.Size = new System.Drawing.Size(170, 90);
+            this.grpVersions.TabIndex = 2;
+            this.grpVersions.TabStop = false;
+            this.grpVersions.Text = "Game Versions";
             // 
             // chkV2
             // 
@@ -203,7 +203,7 @@
             this.Controls.Add(this.picAnimal);
             this.Controls.Add(this.txtStatus);
             this.Controls.Add(this.grpModifications);
-            this.Controls.Add(this.grpVersion);
+            this.Controls.Add(this.grpVersions);
             this.Controls.Add(this.lblHeading);
             this.Controls.Add(this.btnInstall);
             this.ForeColor = System.Drawing.Color.Black;
@@ -213,8 +213,8 @@
             this.Name = "frmSetup";
             this.Text = "Shidonli Setup";
             this.Load += new System.EventHandler(this.frmSetup_Load);
-            this.grpVersion.ResumeLayout(false);
-            this.grpVersion.PerformLayout();
+            this.grpVersions.ResumeLayout(false);
+            this.grpVersions.PerformLayout();
             this.grpModifications.ResumeLayout(false);
             this.grpModifications.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAnimal)).EndInit();
@@ -227,7 +227,7 @@
 
         private System.Windows.Forms.Button btnInstall;
         private System.Windows.Forms.Label lblHeading;
-        private System.Windows.Forms.GroupBox grpVersion;
+        private System.Windows.Forms.GroupBox grpVersions;
         private System.Windows.Forms.GroupBox grpModifications;
         private System.Windows.Forms.CheckBox chkRegister;
         private System.Windows.Forms.TextBox txtStatus;
