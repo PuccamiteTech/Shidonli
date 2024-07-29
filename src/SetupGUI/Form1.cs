@@ -102,7 +102,7 @@ namespace Shidonli
             string silverlightDir = @"C:\Program Files\Microsoft Silverlight\5.1.50918.0";
             string registerFile = shidonniDir + @"\islands\v2\ClientBin\RegisterLib.xap";
             string hostsFile = @"C:\Windows\System32\drivers\etc\hosts";
-            string vhostsfile = @"C:\xampp\apache\conf\extra\httpd-vhosts.conf";
+            string vhostsFile = @"C:\xampp\apache\conf\extra\httpd-vhosts.conf";
             string ip = "\n127.0.0.1 ";
             string host = "shidonni.com";
             bool doFullClean = !Directory.Exists(htdocsDir);
@@ -153,9 +153,12 @@ namespace Shidonli
                     "xampp_mercury,xampp_tomcat,xampp_perl,xampp_webalizer,xampp_sendmail").WaitForExit();
                 }
 
-                // Replace vhosts
-                txtStatus.Text += Environment.NewLine + "Replacing vhosts...";
-                File.Copy(@"Resources\httpd-vhosts.conf", vhostsfile, true);
+                // Update vhosts
+                if (!File.ReadAllText(vhostsFile).Contains("shidonni"))
+                {
+                    txtStatus.Text += Environment.NewLine + "Adding vhosts...";
+                    File.AppendAllText(vhostsFile, File.ReadAllText(@"Resources\httpd-vhosts.conf"));
+                }
 
                 // Clean htdocs                
                 if (doFullClean)
