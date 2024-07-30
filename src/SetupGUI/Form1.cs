@@ -14,6 +14,14 @@ namespace Shidonli
             InitializeComponent();
         }
 
+        private void ToggleControls(bool doDisable)
+        {
+            btnInstall.Enabled = doDisable;
+            btnReset.Enabled = doDisable;
+            grpVersions.Enabled = doDisable;
+            grpSettings.Enabled = doDisable;
+        }
+
         private void frmSetup_Load(object sender, EventArgs e)
         {
             txtStatus.Text = "Initializing...";
@@ -35,36 +43,6 @@ namespace Shidonli
                 txtStatus.Text += Environment.NewLine + "WARNING: The app may misbehave without its intended config.";
             }
 
-            // Restrict to 64-bit OSes
-            if (!Environment.Is64BitOperatingSystem)
-            {
-                txtStatus.Text += Environment.NewLine + "This tool is not for 32-bit systems!";
-                btnInstall.Enabled = false;
-                btnReset.Enabled = false;
-                grpVersions.Enabled = false;
-                grpModifications.Enabled = false;
-            }
-
-            // Check for supplementary files
-            if (!File.Exists(@"Resources\httpd-vhosts.conf"))
-            {
-                txtStatus.Text += Environment.NewLine + "The vhosts config file is missing!";
-                btnInstall.Enabled = false;
-            }
-            
-            if (!File.Exists(@"Resources\Silverlight_Developer_x64.exe"))
-            {
-                txtStatus.Text += Environment.NewLine + "The Silverlight installer is missing!";
-                btnInstall.Enabled = false;
-            }
-
-            if (!File.Exists(@"Resources\RegisterLib.xap"))
-            {
-                txtStatus.Text += Environment.NewLine + "The custom registration library is missing!";
-                chkRegister.Enabled = false;
-                chkRegister.Checked = false;
-            }
-
             if (!File.Exists(@"Resources\htdocs.v1.zip"))
             {
                 chkV1.Enabled = false;
@@ -79,17 +57,45 @@ namespace Shidonli
             {
                 chkV2.Enabled = false;
                 chkV2.Checked = false;
+                chkRegister.Enabled = false;
             }
             else
             {
                 txtStatus.Text += Environment.NewLine + "V2 htdocs detected...";
             }
 
-
+            // If this check is misplaced, it can falsely trigger.
             if (!chkV1.Enabled && !chkV2.Enabled)
             {
                 txtStatus.Text += Environment.NewLine + "No Shidonni archives are present!";
-                btnInstall.Enabled = false;
+                ToggleControls(false);
+            }
+
+            // Restrict to 64-bit OSes
+            if (!Environment.Is64BitOperatingSystem)
+            {
+                txtStatus.Text += Environment.NewLine + "This tool is not for 32-bit systems!";
+                ToggleControls(false);
+            }
+
+            // Check for supplementary files
+            if (!File.Exists(@"Resources\httpd-vhosts.conf"))
+            {
+                txtStatus.Text += Environment.NewLine + "The vhosts config file is missing!";
+                ToggleControls(false);
+            }
+            
+            if (!File.Exists(@"Resources\Silverlight_Developer_x64.exe"))
+            {
+                txtStatus.Text += Environment.NewLine + "The Silverlight installer is missing!";
+                ToggleControls(false);
+            }
+
+            if (!File.Exists(@"Resources\RegisterLib.xap"))
+            {
+                txtStatus.Text += Environment.NewLine + "The custom registration library is missing!";
+                chkRegister.Enabled = false;
+                chkRegister.Checked = false;
             }
         }
 
@@ -109,11 +115,7 @@ namespace Shidonli
 
             try
             {
-                // Freeze controls
-                btnInstall.Enabled = false;
-                btnReset.Enabled = false;
-                grpVersions.Enabled = false;
-                grpModifications.Enabled = false;
+                ToggleControls(false);
 
                 // Uncheck invalid modifications
                 if (!chkV2.Checked)
@@ -130,7 +132,7 @@ namespace Shidonli
                 }
 
                 // Download software
-                if (!File.Exists(wampExe) && !File.Exists(@"Resources\xampp.exe") || chkFresh.Checked)
+                if (!File.Exists(wampExe) && !File.Exists(@"Resources\xampp.exe") || chkRepair.Checked)
                 {
                     ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
                     txtStatus.Text += Environment.NewLine + "Downloading WAMP stack...";
@@ -138,14 +140,14 @@ namespace Shidonli
                 }
 
                 // Install Silverlight
-                if (!Directory.Exists(silverlightDir) || chkFresh.Checked)
+                if (!Directory.Exists(silverlightDir) || chkRepair.Checked)
                 {
                     txtStatus.Text += Environment.NewLine + "Installing Silverlight...";
                     Process.Start(@"Resources\Silverlight_Developer_x64.exe", "/q /doNotRequireDRMPrompt /noupdate");
                 }
 
                 // Install WAMP (wait until done)
-                if (!File.Exists(wampExe) || chkFresh.Checked)
+                if (!File.Exists(wampExe) || chkRepair.Checked)
                 {
                     txtStatus.Text += Environment.NewLine + "Installing WAMP stack...";
                     Process.Start(@"Resources\xampp.exe",
@@ -197,11 +199,7 @@ namespace Shidonli
 
                 txtStatus.Text += Environment.NewLine + "Installation is complete!";
 
-                // Reset controls
-                btnInstall.Enabled = true;
-                btnReset.Enabled = true;
-                grpVersions.Enabled = true;
-                grpModifications.Enabled = true;
+                ToggleControls(true);
 
                 if (File.Exists(wampExe))
                 {
@@ -217,10 +215,23 @@ namespace Shidonli
         private void btnReset_Click(object sender, EventArgs e)
         {
             txtStatus.Text = "Resetting selections...";
-            chkV1.Checked = true;
-            chkV2.Checked = true;
-            chkRegister.Checked = true;
-            chkFresh.Checked = false;
+
+            if (chkV1.Enabled)
+            {
+                chkV1.Checked = true;
+            }
+            
+            if (chkV2.Enabled)
+            {
+                chkV2.Checked = true;
+            }
+
+            if (chkRegister.Enabled)
+            {
+                chkRegister.Checked = true;
+            }
+
+            chkRepair.Checked = false;
         }
 
         private void btnQuit_Click(object sender, EventArgs e)

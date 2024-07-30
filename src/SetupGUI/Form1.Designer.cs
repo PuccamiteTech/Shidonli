@@ -34,15 +34,15 @@
             this.grpVersions = new System.Windows.Forms.GroupBox();
             this.chkV2 = new System.Windows.Forms.CheckBox();
             this.chkV1 = new System.Windows.Forms.CheckBox();
-            this.grpModifications = new System.Windows.Forms.GroupBox();
-            this.chkFresh = new System.Windows.Forms.CheckBox();
+            this.grpSettings = new System.Windows.Forms.GroupBox();
+            this.chkRepair = new System.Windows.Forms.CheckBox();
             this.chkRegister = new System.Windows.Forms.CheckBox();
             this.txtStatus = new System.Windows.Forms.TextBox();
             this.picAnimal = new System.Windows.Forms.PictureBox();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnQuit = new System.Windows.Forms.Button();
             this.grpVersions.SuspendLayout();
-            this.grpModifications.SuspendLayout();
+            this.grpSettings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAnimal)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,28 +106,28 @@
             this.chkV1.Text = "V1 (2008-2010)";
             this.chkV1.UseVisualStyleBackColor = true;
             // 
-            // grpModifications
+            // grpSettings
             // 
-            this.grpModifications.Controls.Add(this.chkFresh);
-            this.grpModifications.Controls.Add(this.chkRegister);
-            this.grpModifications.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpModifications.Location = new System.Drawing.Point(334, 74);
-            this.grpModifications.Name = "grpModifications";
-            this.grpModifications.Size = new System.Drawing.Size(170, 90);
-            this.grpModifications.TabIndex = 3;
-            this.grpModifications.TabStop = false;
-            this.grpModifications.Text = "Modifications";
+            this.grpSettings.Controls.Add(this.chkRepair);
+            this.grpSettings.Controls.Add(this.chkRegister);
+            this.grpSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpSettings.Location = new System.Drawing.Point(334, 74);
+            this.grpSettings.Name = "grpSettings";
+            this.grpSettings.Size = new System.Drawing.Size(170, 90);
+            this.grpSettings.TabIndex = 3;
+            this.grpSettings.TabStop = false;
+            this.grpSettings.Text = "Settings";
             // 
-            // chkFresh
+            // chkRepair
             // 
-            this.chkFresh.AutoSize = true;
-            this.chkFresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkFresh.Location = new System.Drawing.Point(6, 43);
-            this.chkFresh.Name = "chkFresh";
-            this.chkFresh.Size = new System.Drawing.Size(99, 20);
-            this.chkFresh.TabIndex = 3;
-            this.chkFresh.Text = "Fresh Setup";
-            this.chkFresh.UseVisualStyleBackColor = true;
+            this.chkRepair.AutoSize = true;
+            this.chkRepair.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkRepair.Location = new System.Drawing.Point(6, 43);
+            this.chkRepair.Name = "chkRepair";
+            this.chkRepair.Size = new System.Drawing.Size(106, 20);
+            this.chkRepair.TabIndex = 3;
+            this.chkRepair.Text = "Repair Mode";
+            this.chkRepair.UseVisualStyleBackColor = true;
             // 
             // chkRegister
             // 
@@ -202,7 +202,7 @@
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.picAnimal);
             this.Controls.Add(this.txtStatus);
-            this.Controls.Add(this.grpModifications);
+            this.Controls.Add(this.grpSettings);
             this.Controls.Add(this.grpVersions);
             this.Controls.Add(this.lblHeading);
             this.Controls.Add(this.btnInstall);
@@ -215,8 +215,8 @@
             this.Load += new System.EventHandler(this.frmSetup_Load);
             this.grpVersions.ResumeLayout(false);
             this.grpVersions.PerformLayout();
-            this.grpModifications.ResumeLayout(false);
-            this.grpModifications.PerformLayout();
+            this.grpSettings.ResumeLayout(false);
+            this.grpSettings.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAnimal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -228,13 +228,13 @@
         private System.Windows.Forms.Button btnInstall;
         private System.Windows.Forms.Label lblHeading;
         private System.Windows.Forms.GroupBox grpVersions;
-        private System.Windows.Forms.GroupBox grpModifications;
+        private System.Windows.Forms.GroupBox grpSettings;
         private System.Windows.Forms.CheckBox chkRegister;
         private System.Windows.Forms.TextBox txtStatus;
         private System.Windows.Forms.PictureBox picAnimal;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnQuit;
-        private System.Windows.Forms.CheckBox chkFresh;
+        private System.Windows.Forms.CheckBox chkRepair;
         private System.Windows.Forms.CheckBox chkV2;
         private System.Windows.Forms.CheckBox chkV1;
     }
