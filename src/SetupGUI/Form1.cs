@@ -109,6 +109,8 @@ namespace Shidonli
             string registerFile = shidonniDir + @"\islands\v2\ClientBin\RegisterLib.xap";
             string hostsFile = @"C:\Windows\System32\drivers\etc\hosts";
             string vhostsFile = @"C:\xampp\apache\conf\extra\httpd-vhosts.conf";
+            string apacheFile = @"C:\xampp\apache\bin\httpd.exe";
+            string mysqlFile = @"C:\xampp\mysql\bin\mysqld.exe";
             string ip = "\n127.0.0.1 ";
             string host = "shidonni.com";
             bool doFullClean = !Directory.Exists(htdocsDir);
@@ -195,6 +197,24 @@ namespace Shidonli
                 {
                     txtStatus.Text += Environment.NewLine + "Replacing RegisterLib.xap...";
                     File.Copy(@"Resources\RegisterLib.xap", registerFile, true);
+                }
+                
+                // Prepare Apache
+                if (File.Exists(apacheFile))
+                {
+                    txtStatus.Text += Environment.NewLine + "Installing Apache service...";
+                    Process.Start(apacheFile, "-k stop").WaitForExit();
+                    Process.Start(apacheFile, "-k install").WaitForExit();
+                    Process.Start(apacheFile, "-k start").WaitForExit();
+                }
+
+                // Prepare MySQL
+                if (File.Exists(mysqlFile))
+                {
+                    txtStatus.Text += Environment.NewLine + "Installing MySQL Service...";
+                    Process.Start("net.exe", "stop mysql").WaitForExit();
+                    Process.Start(mysqlFile, "--install").WaitForExit();
+                    Process.Start("net.exe", "start mysql").WaitForExit();
                 }
 
                 txtStatus.Text += Environment.NewLine + "Installation is complete!";
