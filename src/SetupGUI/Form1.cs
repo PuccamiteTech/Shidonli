@@ -126,7 +126,7 @@ namespace Shidonli
                 }
 
                 // Update hosts
-                if (!File.ReadAllText(hostsFile).Contains("shidonni"))
+                if (!File.ReadAllText(hostsFile).Contains(host))
                 {
                     txtStatus.Text += Environment.NewLine + "Adding hosts...";
                     File.Copy(hostsFile, @"Resources\hosts.bak", true);
@@ -158,7 +158,7 @@ namespace Shidonli
                 }
 
                 // Update vhosts
-                if (!File.ReadAllText(vhostsFile).Contains("shidonni"))
+                if (!File.ReadAllText(vhostsFile).Contains(host))
                 {
                     txtStatus.Text += Environment.NewLine + "Adding vhosts...";
                     File.AppendAllText(vhostsFile, File.ReadAllText(@"Resources\httpd-vhosts.conf"));
@@ -220,11 +220,6 @@ namespace Shidonli
                 txtStatus.Text += Environment.NewLine + "Installation is complete!";
 
                 ToggleControls(true);
-
-                if (File.Exists(wampExe))
-                {
-                    Process.Start(wampExe);
-                }
             }
             catch (Exception err)
             {
