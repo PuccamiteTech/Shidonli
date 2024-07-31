@@ -43,6 +43,7 @@ namespace Shidonli
                 txtStatus.Text += Environment.NewLine + "WARNING: The app may misbehave without its intended config.";
             }
 
+            // Check for supplementary files
             if (!File.Exists(@"Resources\htdocs.v1.zip"))
             {
                 chkV1.Enabled = false;
@@ -64,27 +65,18 @@ namespace Shidonli
                 txtStatus.Text += Environment.NewLine + "V2 htdocs detected...";
             }
 
-            // If this check is misplaced, it can falsely trigger.
-            if (!chkV1.Enabled && !chkV2.Enabled)
+            if (!chkV1.Enabled && !chkV2.Enabled) // If this check is misplaced, it can falsely trigger.
             {
                 txtStatus.Text += Environment.NewLine + "No Shidonni archives are present!";
                 ToggleControls(false);
             }
 
-            // Restrict to 64-bit OSes
-            if (!Environment.Is64BitOperatingSystem)
-            {
-                txtStatus.Text += Environment.NewLine + "This tool is not for 32-bit systems!";
-                ToggleControls(false);
-            }
-
-            // Check for supplementary files
             if (!File.Exists(@"Resources\httpd-vhosts.conf"))
             {
                 txtStatus.Text += Environment.NewLine + "The vhosts config file is missing!";
                 ToggleControls(false);
             }
-            
+
             if (!File.Exists(@"Resources\Silverlight_Developer_x64.exe"))
             {
                 txtStatus.Text += Environment.NewLine + "The Silverlight installer is missing!";
@@ -96,6 +88,13 @@ namespace Shidonli
                 txtStatus.Text += Environment.NewLine + "The custom registration library is missing!";
                 chkRegister.Enabled = false;
                 chkRegister.Checked = false;
+            }
+
+            // Restrict to 64-bit OSes
+            if (!Environment.Is64BitOperatingSystem)
+            {
+                txtStatus.Text += Environment.NewLine + "This tool is not for 32-bit systems!";
+                ToggleControls(false);
             }
         }
 
